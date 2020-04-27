@@ -279,6 +279,7 @@ public class TutorialManager : MonoBehaviour
     {
         Object_Create();
         TutorialTouch.instance.Move_Off();
+
         StartCoroutine(Continue_Count());
         //tutorial = 2;
         //Tutorial_Start();
@@ -439,7 +440,7 @@ public class TutorialManager : MonoBehaviour
         }
         Object_Reset.Clear();
         TutorialTouch.instance.Move_Off();
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(1.5f);
         Tutorial_Start();
     }
 
@@ -1311,7 +1312,7 @@ public class TutorialManager : MonoBehaviour
         }
         Object_Create_Building(1);
         Object_Create_Building(3);
-        yield return new WaitForSeconds(1);
+        //yield return new WaitForSeconds(1);
         LanguageManager.instance.CoolTime_Skill_Notion();
         Skill_Filter.fillAmount = 0;
         Skill_Value = true;

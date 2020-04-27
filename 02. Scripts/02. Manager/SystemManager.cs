@@ -279,7 +279,7 @@ public class SystemManager : MonoBehaviour
     void Stat_Load()
     {
         Heart_Default_Value = 0;
-        Heart_Up_Value = 2;
+        Heart_Up_Value = 3;
 
         Fly_Default_Value = 10;
         Fly_Up_Value = 0.5f;
@@ -302,7 +302,7 @@ public class SystemManager : MonoBehaviour
         Score2_Default_Value = 0;
         Score2_Up_Value = 3;
         Coin2_Default_Value = 0;
-        Coin2_Up_Value = 2;
+        Coin2_Up_Value = 3;
 
         Black_Skill_Point_Save = PlayerPrefs.GetString("Black_Skill_Point_Save");
         White_Skill_Point_Save = PlayerPrefs.GetString("White_Skill_Point_Save");

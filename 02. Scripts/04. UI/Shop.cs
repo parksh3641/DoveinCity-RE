@@ -57,7 +57,7 @@ public class Shop : MonoBehaviour
 
     //구매
     private int Buy_Value;
-    private int[] Buy_Value_Number = { 2500, 5000, 3, 100, 1500, 0, 10, 100, 200 };
+    private int[] Buy_Value_Number = { 2000, 4500, 3, 100, 1500, 0, 10, 100, 200 };
 
 
     void Awake()

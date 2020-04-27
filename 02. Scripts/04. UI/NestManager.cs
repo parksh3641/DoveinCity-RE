@@ -472,7 +472,7 @@ public class NestManager : MonoBehaviour
         BD_White_AliveTime = PlayerPrefs.GetInt("BD_White_AliveTime");
         BD_Eagle_AliveTime = PlayerPrefs.GetInt("BD_Eagle_AliveTime");
         BD_Dora_AliveTime = PlayerPrefs.GetInt("BD_Dora_AliveTime");
-        Debug.Log(BD_Black_AliveTime);
+        //Debug.Log(BD_Black_AliveTime);
 
         Black_Skill_Point_Total = PlayerPrefs.GetInt("Black_Skill_Point_Total");
         White_Skill_Point_Total = PlayerPrefs.GetInt("White_Skill_Point_Total");
@@ -578,10 +578,10 @@ public class NestManager : MonoBehaviour
         Eagle_Skill_Point_Save = PlayerPrefs.GetString("Eagle_Skill_Point_Save");
         Dora_Skill_Point_Save = PlayerPrefs.GetString("Dora_Skill_Point_Save");
 
-        //Debug.Log("구구 : "+Black_Skill_Point_Save);
-        //Debug.Log("루루 : "+White_Skill_Point_Save);
-        //Debug.Log("수리수리 : "+Eagle_Skill_Point_Save);
-        //Debug.Log("도라 : "+Dora_Skill_Point_Save);
+        Debug.Log("구구 : "+Black_Skill_Point_Save);
+        Debug.Log("루루 : "+White_Skill_Point_Save);
+        Debug.Log("수리수리 : "+Eagle_Skill_Point_Save);
+        Debug.Log("도라 : "+Dora_Skill_Point_Save);
 
 
         //불러온 후 변환
@@ -697,7 +697,7 @@ public class NestManager : MonoBehaviour
             Skill_Lv_Setting(number2[6], label[18], label[19], label[20], sprite[6], skill_value[12], skill_value[13],0);
             Skill_Lv_Setting(number2[7], label[21], label[22], label[23], sprite[7], skill_value[14], skill_value[15],1);
             Skill_Lv_Setting(number2[8], label[24], label[25], label[26], sprite[8], skill_value[16], skill_value[17],2);
-            Skill_Lv_Setting(number3[9], label[27], label[28], label[29], sprite[9], skill_value[18], skill_value[19],2);
+            Skill_Lv_Setting(number2[9], label[27], label[28], label[29], sprite[9], skill_value[18], skill_value[19],2);
         }
         else if (value == 3)
         {
@@ -2091,9 +2091,9 @@ public class NestManager : MonoBehaviour
 
         if (Skill_Point_All < Skill_Point_Total)
         {
-            if (BD_Dora_Feather >= 2)
+            if (BD_Dora_Feather >= 1)
             {
-                BD_Dora_Feather -= 2;
+                BD_Dora_Feather -= 1;
                 PlayerPrefs.SetInt("BD_Dora_Feather", BD_Dora_Feather);
 
                 if (Choice == 1)

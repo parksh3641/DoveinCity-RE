@@ -2036,9 +2036,8 @@ public class GameManager : MonoBehaviour
     {
         if(Level == 0)
         {
-            Hp_Minus_Control = number * 0.25f;
-
-            number -= Hp_Minus_Control;
+            //Hp_Minus_Control = number * 0.25f;
+            //number -= Hp_Minus_Control;
         }
         else if(Level == 1)
         {

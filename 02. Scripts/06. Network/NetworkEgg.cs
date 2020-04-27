@@ -33,6 +33,7 @@ public class NetworkEgg : MonoBehaviourPunCallbacks
         if (coll.gameObject.tag == "Boss")
         {
             EffectManager.instance.Bang();
+            NetworkGameManager.instance.Boss_Hit(10);
             Destroy(gameObject);
         }
     }

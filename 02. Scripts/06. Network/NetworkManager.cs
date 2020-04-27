@@ -231,6 +231,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks
     }
     public void InGame_Exit() //멀티 플레이 방에서 나가기
     {
+        NetworkGameManager.instance.Lobby_Back();
+
         OptionWindow.SetActive(false);
         LeaveRoom();
     }
@@ -290,6 +292,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
     public override void OnDisconnected(DisconnectCause cause)
     {
+        NetworkGameManager.instance.Lobby_Back();
+
         State_Text.text = "서버와 연결이 끊겼습니다.";
         print("연결끊김");
 
@@ -379,7 +383,13 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         EffectManager.instance.Coin_Plus();
         ChatRPC("[FFFF00][알림] 멀티플레이에 오신것을 환영합니다.[-]");
 
-        PhotonNetwork.Instantiate("Black", Vector3.zero, Quaternion.identity);
+        float a = Random.Range(-1f, 1f);
+        float b = Random.Range(-1f, 1f);
+        Vector3 c = new Vector3(a, b);
+
+        PhotonNetwork.Instantiate("Black", c, Quaternion.identity);
+
+        NetworkGameManager.instance.Game_Start();
     }
 
     public override void OnCreateRoomFailed(short returnCode, string message)
@@ -463,6 +473,12 @@ public class NetworkManager : MonoBehaviourPunCallbacks
             print("글자를 입력하세요");
         }
     }
+    public void Boss_KillLog()
+    {
+        PV.RPC("ChatRPC", RpcTarget.All, "[FF0000]" + PhotonNetwork.NickName + "[FF0000]님이 보스를 처치하였습니다.[-]");
+        Boss_Kill();
+    }
+
 
     [PunRPC] // RPC는 플레이어가 속해있는 방 모든 인원에게 전달한다
     void ChatRPC(string msg)
@@ -497,5 +513,19 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         Chat.SetActive(false);
         Chat_Exit_Btn.SetActive(false);
         Chat_Open_Btn.SetActive(true);
+    }
+
+    public void Boss_Appear()
+    {
+        source.Stop();
+        source.clip = boss_theme;
+        source.Play();
+    }
+
+    public void Boss_Kill()
+    {
+        source.Stop();
+        source.clip = room_theme;
+        source.Play();
     }
 }

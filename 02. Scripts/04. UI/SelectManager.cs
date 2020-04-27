@@ -578,7 +578,7 @@ public class SelectManager : MonoBehaviour
         {
             WindowValue = 10;
             Detail_Score_Info.SetActive(true);
-            GooglePlayManager.instance.ShowLeaderboardUI();
+            //GooglePlayManager.instance.ShowLeaderboardUI(); //리더보드 설정
         }
     }
 
@@ -709,6 +709,7 @@ public class SelectManager : MonoBehaviour
         WindowValue = 6;
         ShopWindow.SetActive(true);
         Egg_Arrow.SetActive(true);
+        Bar.value = 0;
     }
 
     public void ShopGo2() //코인 다이아 클릭시 상점 넘어가기

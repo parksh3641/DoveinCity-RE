@@ -13,7 +13,7 @@ public class UFOCtrl : MonoBehaviour
     private float Start_Y;
 
     private float X = 11f; //비둘기 x좌표
-    private float Y = 5f;
+    private float Y = 7f;
 
     public float End_X;
 

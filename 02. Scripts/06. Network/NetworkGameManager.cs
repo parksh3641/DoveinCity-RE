@@ -50,7 +50,8 @@ public class NetworkGameManager : MonoBehaviour
 
     private int Boss_Level = 0; //쉬움 보통 어려움 크레이지1 2 3 4 - 전멸할 경우 난이도 내려감
     private int Boss_Kind = 0; //보스 종류
-    private int Boss_Hp_Value = 0;
+    private float Boss_Hp_Value = 0;
+    private float Boss_Hp_Max = 0;
 
     private int Boss_Count_m = 0;
     private int Boss_Count_s = 0;
@@ -66,6 +67,8 @@ public class NetworkGameManager : MonoBehaviour
     private bool Boss_Blink_Up;
     private float Boss_Alpha;
 
+    private bool Boss_Clear;
+
 
     void Awake()
     {
@@ -74,18 +77,15 @@ public class NetworkGameManager : MonoBehaviour
         Window_Value = 0;
         NestWindow.SetActive(false);
 
-        Boss_Hp.SetActive(false);
-
         Boss_Notion.SetActive(false);
         Boss_notion = Boss_Notion.GetComponent<UISprite>();
+
+        Boss_Clear = false;
     }
 
     void Start()
     {
-        Boss_Level_txt_Setting();
-        Boss_Count_m = 0;
-        Boss_Count_s = 10;
-        StartCoroutine(Boss_Count());
+        Boss_Level = 0;
 
         Cooltime = SystemManager.instance.SelectDoveCooltime;
 
@@ -98,92 +98,151 @@ public class NetworkGameManager : MonoBehaviour
         Default_Option(Network_Choice);
     }
 
-    void Boss_Level_txt_Setting()
+    public void Game_Start() //게임에 참가한경우
     {
+        Boss_Level_Setting();
+    }
+
+    public void Lobby_Back() //로비로 돌아간경우
+    {
+        Boss_Level = 0;
+
+        Boss_Clear = false;
+        Boss_Value = false;
+
+        Boss_Notion.SetActive(false);
+        EffectManager.instance.Warning_Off();
+
+        StopAllCoroutines();
+    }
+
+    void Boss_Level_Setting()
+    {
+        Boss_Level += 1;
+        Boss_Count_m = 0;
+        Boss_Count_s = 10;
+
+        Boss.SetActive(false);
+        Boss_Hp.SetActive(false);
+
+        Boss_Level_txt.text = "";
+        Boss_Count_txt.text = "";
+
         switch (Boss_Level)
         {
-            case 0:
-                Boss_Level_txt.text = "난이도 : 쉬움";
-                break;
             case 1:
-                Boss_Level_txt.text = "난이도 : 보통";
+                Boss_Level_txt.text = "난이도 : 쉬움";
+                Boss_Hp_Value = 100 + (100 * PhotonNetwork.CurrentRoom.PlayerCount);
                 break;
             case 2:
-                Boss_Level_txt.text = "난이도 : 어려움";
+                Boss_Level_txt.text = "난이도 : 보통";
+                Boss_Hp_Value = 200 + (200 * PhotonNetwork.CurrentRoom.PlayerCount);
                 break;
             case 3:
-                Boss_Level_txt.text = "난이도 : 매우 어려움";
+                Boss_Level_txt.text = "난이도 : 어려움";
+                Boss_Hp_Value = 300 + (300 * PhotonNetwork.CurrentRoom.PlayerCount);
                 break;
             case 4:
-                Boss_Level_txt.text = "난이도 : 크레이지";
+                Boss_Level_txt.text = "난이도 : 매우 어려움";
+                Boss_Hp_Value = 400 + (400 * PhotonNetwork.CurrentRoom.PlayerCount);
+                break;
+            case 5:
+                Boss_Level_txt.text = "난이도 : [FF0000]크레이지1[-]";
+                Boss_Hp_Value = 500 + (500 * PhotonNetwork.CurrentRoom.PlayerCount);
+                break;
+            case 6:
+                Boss_Level_txt.text = "난이도 : [FF0000]크레이지2[-]";
+                Boss_Hp_Value = 600 + (600 * PhotonNetwork.CurrentRoom.PlayerCount);
+                break;
+            case 7:
+                Boss_Level_txt.text = "난이도 : [FF0000]크레이지3[-]";
+                Boss_Hp_Value = 700 + (700 * PhotonNetwork.CurrentRoom.PlayerCount);
+                break;
+            case 8:
+                Boss_Level_txt.text = "난이도 : [FF0000]크레이지4[-]";
+                Boss_Hp_Value = 800 + (800 * PhotonNetwork.CurrentRoom.PlayerCount);
+                break;
+            case 9:
+                Boss_Level_txt.text = "난이도 : [FF0000]크레이지5[-]";
+                Boss_Hp_Value = 900 + (900 * PhotonNetwork.CurrentRoom.PlayerCount);
+                break;
+            case 10:
+                Boss_Level_txt.text = "난이도 : [FF0000]크레이지6[-]";
+                Boss_Hp_Value = 1000 + (1000 * PhotonNetwork.CurrentRoom.PlayerCount);
+                break;
+            case 11:
+                Boss_Level_txt.text = "난이도 : [FF0000]크레이지7[-]";
+                Boss_Hp_Value = 1100 + (1100 * PhotonNetwork.CurrentRoom.PlayerCount);
+                break;
+            case 12:
+                Boss_Level_txt.text = "난이도 : [FF0000]크레이지8[-]";
+                Boss_Hp_Value = 1200 + (1200 * PhotonNetwork.CurrentRoom.PlayerCount);
+                break;
+            case 13:
+                Boss_Level_txt.text = "난이도 : [FF0000]크레이지9[-]";
+                Boss_Hp_Value = 1300 + (1300 * PhotonNetwork.CurrentRoom.PlayerCount);
+                break;
+            case 14:
+                Boss_Level_txt.text = "난이도 : [FF0000]크레이지10[-]";
+                Boss_Hp_Value = 1400 + (1400 * PhotonNetwork.CurrentRoom.PlayerCount);
                 break;
             default:
+                Boss_Clear = true;
                 Boss_Level_txt.text = "난이도 : 클리어";
                 break;
         }
-    }
 
-    void Boss_Hp_Setting(int value)
-    {
-        switch(Boss_Level)
-        {
-            case 0:
-                Boss_Hp_Value = 100 + (100 * PhotonNetwork.CurrentRoom.PlayerCount);
-                break;
-            case 1:
-                Boss_Hp_Value = 200 + (200 * PhotonNetwork.CurrentRoom.PlayerCount);
-                break;
-            case 2:
-                Boss_Hp_Value = 300 + (300 * PhotonNetwork.CurrentRoom.PlayerCount);
-                break;
-            case 3:
-                Boss_Hp_Value = 400 + (400 * PhotonNetwork.CurrentRoom.PlayerCount);
-                break;
-            case 4:
-                Boss_Hp_Value = 500 + (500 * PhotonNetwork.CurrentRoom.PlayerCount);
-                break;
-            default:
-                break;
-        }
+        Boss_Hp_txt.text = "100%";
+        Boss_Hp_Filter.fillAmount = 1f;
+        Boss_Hp_Max = Boss_Hp_Value;
+
+        StartCoroutine(Boss_Count());
     }
 
     IEnumerator Boss_Count()
     {
         yield return new WaitForSeconds(1f);
-        if(Boss_Count_s > 0)
+
+        if (Boss_Clear == false)
         {
-            Boss_Count_s -= 1;
-        }
-        else
-        {
-            if(Boss_Count_m > 0)
+            if (Boss_Count_s > 0)
             {
-                Boss_Count_m -= 1;
-                Boss_Count_s = 59;
+                Boss_Count_s -= 1;
             }
             else
             {
-                Debug.Log("보스 출현");
-                Boss_Coming();
-                Boss_Hp.SetActive(true);
-                yield break;
+                if (Boss_Count_m > 0)
+                {
+                    Boss_Count_m -= 1;
+                    Boss_Count_s = 59;
+                }
+                else
+                {
+                    Debug.Log("보스 출현");
+                    Boss_Coming();
+                    yield break;
+                }
             }
-        }
 
-        string second = "";
+            string second = "";
 
-        if (Boss_Count_s < 10)
-        {
-            second = "0" + Boss_Count_s.ToString();
+            if (Boss_Count_s < 10)
+            {
+                second = "0" + Boss_Count_s.ToString();
+            }
+            else
+            {
+                second = Boss_Count_s.ToString();
+            }
+
+            Boss_Count_txt.text = "보스 출현까지 " + Boss_Count_m + ":" + second;
+
+            StartCoroutine(Boss_Count());
         }
         else
         {
-            second = Boss_Count_s.ToString();
+            yield break;
         }
-
-        Boss_Count_txt.text = "보스 출현까지 " + Boss_Count_m + ":" + second;
-
-        StartCoroutine(Boss_Count());
     }
 
 
@@ -191,7 +250,6 @@ public class NetworkGameManager : MonoBehaviour
     {
         if (Boss_Value == false)
         {
-            Boss_Value = true;
             Boss_Blink = true;
             Boss_Notion.SetActive(true);
             EffectManager.instance.Warning_On();
@@ -202,13 +260,28 @@ public class NetworkGameManager : MonoBehaviour
             Boss_Blink_Up = true;
             StartCoroutine(Notion_Blink());
 
-            //보스 출현
-            //Boss.SetActive(true);
-            Boss_Level_txt.text = "";
             Boss_Count_txt.text = "";
-            Boss_Hp_Setting(Boss_Kind);
         }
     }
+
+    public void Boss_Hit(int value)
+    {
+        if(Boss_Hp_Value - value > 0)
+        {
+            Boss_Hp_Value -= value;
+            Boss_Hp_Filter.fillAmount = Boss_Hp_Value / Boss_Hp_Max;
+            Boss_Hp_txt.text = Mathf.Round(Boss_Hp_Filter.fillAmount * 100).ToString()+"%";
+        }
+        else
+        {
+            Debug.Log("보스 처치");
+            NetworkManager.instance.Boss_KillLog();
+            Boss_Value = false;
+
+            Boss_Level_Setting();
+        }
+    }
+
     IEnumerator Notion_Blink()
     {
         if (Boss_Blink == true)
@@ -251,6 +324,12 @@ public class NetworkGameManager : MonoBehaviour
         Boss_Blink = false;
         Boss_Notion.SetActive(false);
         EffectManager.instance.Warning_Off();
+
+        Boss_Value = true;
+        Boss.SetActive(true);
+        Boss_Hp.SetActive(true);
+
+        NetworkManager.instance.Boss_Appear();
     }
 
     public void Attack_Btn()
@@ -310,10 +389,10 @@ public class NetworkGameManager : MonoBehaviour
         Dove_Rocked(Eagle_Rocked, b);
         Dove_Rocked(Dora_Rocked, c);
 
-        StartCoroutine(Flying(Black_sprite, Black));
-        StartCoroutine(Flying(White_sprite, White));
-        StartCoroutine(Flying(Eagle_sprite, Eagle));
-        StartCoroutine(Flying(Dora_sprite, Dora));
+        //StartCoroutine(Flying(Black_sprite, Black));
+        //StartCoroutine(Flying(White_sprite, White));
+        //StartCoroutine(Flying(Eagle_sprite, Eagle));
+        //StartCoroutine(Flying(Dora_sprite, Dora));
     }
 
     public void Dove_Rocked(GameObject rock, int number)

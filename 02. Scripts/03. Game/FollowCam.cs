@@ -258,9 +258,9 @@ public class FollowCam : MonoBehaviour
         {
             if (Skill_Use == true)
             {
-                if (Camera_Size < 1.3f)
+                if (Camera_Size < 1.6f)
                 {
-                    Camera_Size += 0.001f;
+                    Camera_Size += 0.002f;
                 }
             }
             else
@@ -284,7 +284,7 @@ public class FollowCam : MonoBehaviour
         {
             if (Camera_Size >= 1)
             {
-                Camera_Size -= 0.001f;
+                Camera_Size -= 0.002f;
             }
             else
             {
@@ -295,7 +295,7 @@ public class FollowCam : MonoBehaviour
         {
             if (Camera_Size >= 1)
             {
-                Camera_Size -= 0.008f;
+                Camera_Size -= 0.016f;
             }
             else
             {

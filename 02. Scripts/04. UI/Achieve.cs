@@ -124,13 +124,13 @@ public class Achieve : MonoBehaviour
     //언어설정
 
     //1
-    private string[] Content_Title_Korean = { "광고 시청","업적 달성","누적 점수","누적 생존시간","누적 단계","아이템 획득","스킬 사용","누적 체력 회복량","누적 받은 데미지","피버 모드 발동",
-        "날씨 변경","NPC와 대화하기","UFO 납치","히든 스테이지 진입","누적 코인 사용","누적 다이아 사용","누적 알까기","비둘기 총합 레벨","히든 업적" };
+    private string[] Content_Title_Korean = { "광고 시청","업적 달성","총합 점수","총합 생존시간","총합 단계","아이템 획득","스킬 사용","총합 체력 회복량","총합 받은 데미지","피버 모드 발동",
+        "날씨 변경","NPC와 대화하기","UFO 납치","히든 스테이지 진입","총합 코인 사용","총합 다이아 사용","총합 알까기","비둘기 총합 레벨","히든 업적" };
     private string[] Content_False_Korean = { "보상" ,"보상 받기"};
 
-    private string[] Content_Title_English = { "Watch an Ad", "Achievement", "Stack Up Score", "Stack Up Survival Time", "Stack Up Stage",  "Get Item", "Use Skill",
-        "Stack Up HP Recovery", "Stack Up Damage", "Active Fever Mode", "Changes Weather", "Talk to NPC","Kidnapped By UFO", "Enter Hidden Stage", "Stack Up Coin Use",
-        "Stack Up Diamond Use","Hit Shop Eggs", "Dove Total Level", "Hidden Achievement" };
+    private string[] Content_Title_English = { "Watch an Ad", "Achievement", "Total Score", "Total Survival Time", "Total Stage",  "Get Item", "Use Skill",
+        "Total HP Recovery", "Total Damage", "Active Fever Mode", "Changes Weather", "Talk to NPC","Kidnapped By UFO", "Enter Hidden Stage", "Total Coin Use",
+        "Total Diamond Use","Hit Shop Eggs", "Dove Total Level", "Hidden Achievement" };
 
     private string[] Content_False_English = { "Reward","Get Reward"};
 

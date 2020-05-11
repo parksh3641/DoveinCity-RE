@@ -626,18 +626,10 @@ public class PeopleCtrl : MonoBehaviour
             }
             else
             {
-                if (Dove_Choice == 3)
+                if (Dove_Choice == 3 || Dove_Choice == 4)
                 {
                     Draw_State = true;
                     Draw();
-                }
-                else if (Dove_Choice == 4)
-                {
-                    if (DoveCtrl.instance.Weather_Value == 0)
-                    {
-                        Draw_State = true;
-                        Draw();
-                    }
                 }
             }
         }

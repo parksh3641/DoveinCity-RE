@@ -684,6 +684,7 @@ public class TalkManager : MonoBehaviour
         int i = UnityEngine.Random.Range(0, 100);
         if(i >= 100 - number1)
         {
+            Box_System.Stop();
             //Debug.Log("아무일도 일어나지 않았다.");
 
             Box_sprite.spriteName = "산신령_UI";
@@ -717,7 +718,7 @@ public class TalkManager : MonoBehaviour
                 Box_sprite.spriteName = "Coin_1";
                 Shadow_sprite.spriteName = "Coin_1";
 
-                int k = UnityEngine.Random.Range(500, 1001);
+                int k = UnityEngine.Random.Range(1000, 2001);
                 Box_label.text = "+" + k.ToString();
 
                 GameManager.instance.Coin_Plus(k);

@@ -173,7 +173,14 @@ public class ManduCtrl : MonoBehaviour
                 if (Mandu_Check == 1)
                 {
                     gameObject.SetActive(false);
-                    GameManager.instance.Hp_Plus(Mandu_Hp);
+                    if(DoveChoice != 4)
+                    {
+                        GameManager.instance.Hp_Plus(Mandu_Hp);
+                    }
+                    else
+                    {
+                        GameManager.instance.Hp_Plus(Mandu_Hp / 2);
+                    }
                 }
             }
         }

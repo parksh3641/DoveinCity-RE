@@ -229,6 +229,7 @@ public class SystemManager : MonoBehaviour
             {
                 PlayerPrefs.SetString("SaveLastTime", System.DateTime.Now.ToString());
             }
+
             Debug.Log("처음 킴");
         }
 
@@ -279,30 +280,34 @@ public class SystemManager : MonoBehaviour
     void Stat_Load()
     {
         Heart_Default_Value = 0;
-        Heart_Up_Value = 3;
+        Heart_Up_Value = 2;
 
-        Fly_Default_Value = 10;
+        Fly_Default_Value = 5.5f; //높이날기 지속시간
         Fly_Up_Value = 0.5f;
 
         Coin_Default_Value = 20;
         Coin_Up_Value = 2;
 
-        Item_Default_Value = 10;
+        Item_Default_Value = 15;
         Item_Up_Value = 1;
 
-        Hit_Default_Value = 2.1f;
-        Hit_Up_Value = 0.1f;
+        Hit_Default_Value = 1.5f;
+        Hit_Up_Value = 0.05f;
 
         Move_Default_Value = 0;
         Move_Up_Value = 1;
+
         Fever_Default_Value = 10;
-        Fever_Up_Value = 1f;
+        Fever_Up_Value = 0.5f;
+
         FlyDown_Default_Value = 30;
         FlyDown_Up_Value = -1;
+
         Score2_Default_Value = 0;
         Score2_Up_Value = 3;
+
         Coin2_Default_Value = 0;
-        Coin2_Up_Value = 3;
+        Coin2_Up_Value = 2;
 
         Black_Skill_Point_Save = PlayerPrefs.GetString("Black_Skill_Point_Save");
         White_Skill_Point_Save = PlayerPrefs.GetString("White_Skill_Point_Save");
@@ -423,7 +428,7 @@ public class SystemManager : MonoBehaviour
         Default_Black_Hp = 100;
         Default_White_Hp = 100;
         Default_Eagle_Hp = 150;
-        Default_Dora_Hp = 75;
+        Default_Dora_Hp = 80;
 
         switch(DoveChoice)
         {
@@ -441,14 +446,14 @@ public class SystemManager : MonoBehaviour
                 break;
         }
 
-        Skill_Time = 10.0f + Upgrade_Skill_Time;
+        Skill_Time = Fly_Default_Value + Upgrade_Skill_Time;
         //코인은 Upgrade_Coin을 직접 불러서 사용함.
-        Item_Time = 10.0f + Upgrade_Item_Time;
-        Dove_Invincibel_Time = 2.1f + Upgrade_Hit_Time;
+        Item_Time = Item_Default_Value + Upgrade_Item_Time;
+        Dove_Invincibel_Time = Hit_Default_Value + Upgrade_Hit_Time;
 
         //이동속도
         Fever_Time = Fever_Default_Value + Upgrade_Fever;
-        Skill_CoolTime = 30.0f + Upgrade_FlyDown;
+        Skill_CoolTime = FlyDown_Default_Value + Upgrade_FlyDown;
         //점수 2배
         //코인 2배
 
@@ -459,7 +464,7 @@ public class SystemManager : MonoBehaviour
         BD_Clocking_Skin = PlayerPrefs.GetInt("BD_Clocking_Skin");
         BD_Rainbow_Skin = PlayerPrefs.GetInt("BD_Rainbow_Skin"); //게임매니저 코인 획득에서 직접 적용됩니다.
 
-        if (DoveChoice != 3 && DoveChoice != 4)
+        if (DoveChoice != 3)
         {
             if(DoveChoice == 1)
             {
@@ -472,7 +477,7 @@ public class SystemManager : MonoBehaviour
                 int b = PlayerPrefs.GetInt("Clocking_Black");
                 if (b == 1 && BD_Clocking_Skin == 1)
                 {
-                    Item_Time = Mathf.RoundToInt(Item_Time + (Item_Time * 0.25f));
+                    Item_Time = Mathf.RoundToInt(Item_Time + (Item_Time * 0.3f));
                 }
             }
             else if(DoveChoice == 2)
@@ -486,7 +491,21 @@ public class SystemManager : MonoBehaviour
                 int b = PlayerPrefs.GetInt("Clocking_White");
                 if (b == 1 && BD_Clocking_Skin == 1)
                 {
-                    Item_Time = Mathf.RoundToInt(Item_Time + (Item_Time * 0.25f));
+                    Item_Time = Mathf.RoundToInt(Item_Time + (Item_Time * 0.3f));
+                }
+            }
+            else if (DoveChoice == 4)
+            {
+                int a = PlayerPrefs.GetInt("Sunshine_Dora");
+                if (a == 1 && BD_Sunshine_Skin == 1)
+                {
+                    Default_Hp = Mathf.RoundToInt(Default_Hp + (Default_Hp * 0.15f));
+                }
+
+                int b = PlayerPrefs.GetInt("Clocking_Dora");
+                if (b == 1 && BD_Clocking_Skin == 1)
+                {
+                    Item_Time = Mathf.RoundToInt(Item_Time + (Item_Time * 0.3f));
                 }
             }
         }
@@ -499,8 +518,8 @@ public class SystemManager : MonoBehaviour
         SelectDoveCooltime = 0.05f;
 
         Advertising_Count = 1;
-        BD_Diamond_Number = 10;
-        BD_Diamond_Count = 2;
+        BD_Diamond_Number = 5;
+        BD_Diamond_Count = 3;
         //BD_Diamond = 10000; //임시 다이아100
         //BD_Coin = 1000000;
 
@@ -560,11 +579,11 @@ public class SystemManager : MonoBehaviour
         Enemy_Eagle_Damage = 25;
 
         Enemy_Ufo_Damage = 25;
-        Enemy_Building_Damage = 25;
+        Enemy_Building_Damage = 35;
         Enemy_Ship_Damage = 20;
         Enemy_Wave_Damage = 15;
-        Enemy_Mole_Damage = 15;
-        Stone_Damage = 15;
+        Enemy_Mole_Damage = 12;
+        Stone_Damage = 12;
         Car_Damage = 15;
 
         //오브젝트
@@ -591,7 +610,7 @@ public class SystemManager : MonoBehaviour
 
         //생성시간
         Object_Coin_Create_CoolTime = 3f;
-        Object_Item_Create_CoolTime = 7f;
+        Object_Item_Create_CoolTime = 6f;
 
         //단계
         Max_Level = 10;

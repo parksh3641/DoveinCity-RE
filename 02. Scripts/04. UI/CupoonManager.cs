@@ -72,7 +72,7 @@ public class CupoonManager : MonoBehaviour
 
     private string Cupoon45 = "2016041820161103"; //개발자 전용
     private string Cupoon46 = "2019080920200303"; //베타 테스터 전용
-    private string Cupoon47 = "0000000000000000"; //리셋 코드
+    private string Cupoon47 = "9000000000000000"; //리셋 코드
 
 
 
@@ -372,6 +372,8 @@ public class CupoonManager : MonoBehaviour
             PlayerPrefs.SetInt("BD_Rainbow_Skin", 1);
 
             PlayerPrefs.SetInt("BD_Hard_Ticket", BD_Hard_Ticket);
+
+            PlayerPrefs.SetInt("AllScore", 90000);
         }
 
         else if (a == 6)
@@ -414,6 +416,7 @@ public class CupoonManager : MonoBehaviour
         else if (a == 7)
         {
             PlayerPrefs.DeleteAll();
+            SystemManager.instance.OneGo();
         }
     }
 

@@ -21,7 +21,7 @@ public class UFOCtrl : MonoBehaviour
     public EdgeCollider2D edge;
 
     private float Beam_Scale_x = 0.1f;
-    private float Beam_Up = 0.05f;
+    private float Beam_Up = 0.03f;
 
     public int Enemy_Ufo_Damage;
     private int Enemy_Ufo_Score;
@@ -104,6 +104,12 @@ public class UFOCtrl : MonoBehaviour
         {
             Player_State = false;
 
+            Dove_Come = false;
+            Beam_Scale_x = 0.1f;
+            edge.enabled = false;
+            Beam_Go = false;
+            Beam.SetActive(false);
+
             StopAllCoroutines();
         }
         catch (NullReferenceException ie)
@@ -113,6 +119,12 @@ public class UFOCtrl : MonoBehaviour
             GameManager.Player_Die += Player_Die;
 
             Player_State = false;
+
+            Dove_Come = false;
+            Beam_Scale_x = 0.1f;
+            edge.enabled = false;
+            Beam_Go = false;
+            Beam.SetActive(false);
 
             StopAllCoroutines();
         }
@@ -153,7 +165,9 @@ public class UFOCtrl : MonoBehaviour
                     Dove_Come = true;
                     Beam_Go = true;
                     Beam.SetActive(true);
+
                     StopAllCoroutines();
+
                     StartCoroutine(Beaming());
                     EffectManager.instance.Beam();
                 }
@@ -177,12 +191,14 @@ public class UFOCtrl : MonoBehaviour
             edge.enabled = false;
             Beam_Go = false;
             Beam.SetActive(false);
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(2f);
+
             StopAllCoroutines();
-            StartCoroutine(Player_Distance());
+
             Dove_Come = false;
+            StartCoroutine(Player_Distance());
         }
-        yield return new WaitForSeconds(0.02f);
+        yield return new WaitForSeconds(0.05f);
         StartCoroutine(Beaming());
     }
     void Update()

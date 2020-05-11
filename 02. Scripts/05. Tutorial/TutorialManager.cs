@@ -36,6 +36,9 @@ public class TutorialManager : MonoBehaviour
     public UILabel Timer_txt;
     private int Timer;
 
+    public GameObject Skip_arrow; //건너띄기
+    public UILabel Skip_txt;
+
     //프리팹
     private int Eagle_Index;
     private int Item_Index;
@@ -185,6 +188,8 @@ public class TutorialManager : MonoBehaviour
         Eagle_Point = GameObject.Find("Enemy_Points").GetComponentsInChildren<Transform>();
 
         boast.enabled = false;
+
+        Skip_arrow.SetActive(false);
 
         //튜토리얼 기본 설정
         tutorial = 0;
@@ -347,6 +352,8 @@ public class TutorialManager : MonoBehaviour
                 Tutorial_Title = LanguageManager.instance.Tutorial_Title_Japanese;
                 break;
         }
+
+        Skip_txt.text = Tutorial_Title[4];
     }
 
     void Click()
@@ -501,6 +508,8 @@ public class TutorialManager : MonoBehaviour
                 StartCoroutine(Hp_Down(5));
 
                 StartCoroutine(Tutorial_2_Setting(2));
+
+                Skip_arrow.SetActive(false);
                 break;
             case 3:
                 Tutorial_txt.text = Tutorial_Title[0] + " " + tutorial.ToString();
@@ -633,6 +642,8 @@ public class TutorialManager : MonoBehaviour
             case 1:
                 Tutorial_1_Quest_Right.SetActive(true);
                 Tutorial_1_Quest_Left.SetActive(true);
+                Skip_arrow.SetActive(true);
+
                 break;
             case 2:
                 Tutorial_Map_Move = true;

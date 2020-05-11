@@ -634,7 +634,7 @@ public class GameManager : MonoBehaviour
         //스킨
         BD_Rainbow_Skin = PlayerPrefs.GetInt("BD_Rainbow_Skin"); //게임매니저 코인 획득에서 직접 적용됩니다.
 
-        if (DoveChoice != 3 && DoveChoice != 4)
+        if (DoveChoice != 3)
         {
             if (DoveChoice == 1)
             {
@@ -652,6 +652,18 @@ public class GameManager : MonoBehaviour
             else if (DoveChoice == 2)
             {
                 int a = PlayerPrefs.GetInt("Rainbow_White");
+                if (a == 1 && BD_Rainbow_Skin == 1)
+                {
+                    BD_Rainbow_Skin = 1;
+                }
+                else
+                {
+                    BD_Rainbow_Skin = 0;
+                }
+            }
+            else if (DoveChoice == 4)
+            {
+                int a = PlayerPrefs.GetInt("Rainbow_Dora");
                 if (a == 1 && BD_Rainbow_Skin == 1)
                 {
                     BD_Rainbow_Skin = 1;
@@ -2449,6 +2461,10 @@ public class GameManager : MonoBehaviour
                     Dove_Die();
                     yield break;
                 }
+                else
+                {
+                    Hp_Check();
+                }
             }
             yield return new WaitForSeconds(Dove_Hp_Down_Speed);
         }
@@ -2592,7 +2608,7 @@ public class GameManager : MonoBehaviour
         SkillManager.instance.Fever_On();
         GameManager2.instance.Fever_On();
 
-        Dove_Hp_Down_Speed = Dove_Hp_Down_Speed * 0.1f;
+        Dove_Hp_Down_Speed = Dove_Hp_Down_Speed * 0.2f;
 
         source.Pause();
         EffectManager.instance.Disco_Song_On();
@@ -2848,19 +2864,19 @@ public class GameManager : MonoBehaviour
                 rank = "Rank B";
                 PlusScore_Title_txt.color = new Color(0, 1, 0);
                 PlusCoin_Title_txt.color = new Color(0, 1, 0);
-                Plus_NowScore = 4;
+                Plus_NowScore = 5;
                 break;
             case 3:
                 rank = "Rank A";
                 PlusScore_Title_txt.color = new Color(1, 0, 0);
                 PlusCoin_Title_txt.color = new Color(1, 0, 0);
-                Plus_NowScore = 7;
+                Plus_NowScore = 10;
                 break;
             case 4:
                 rank = "Rank S";
                 PlusScore_Title_txt.color = new Color(1, 0, 1);
                 PlusCoin_Title_txt.color = new Color(1, 0, 1);
-                Plus_NowScore = 10;
+                Plus_NowScore = 20;
                 break;
         }
 
@@ -2910,15 +2926,15 @@ public class GameManager : MonoBehaviour
 
         if (Level == 0)
         {
-            Gold = Mathf.RoundToInt(NowScore * 0.3f); //점수의 25% 획득
+            Gold = Mathf.RoundToInt(NowScore * 0.3f); //점수의 30% 획득
         }
         else if (Level == 1)
         {
-            Gold = Mathf.RoundToInt(NowScore * 0.4f); //점수의 50% 획득
+            Gold = Mathf.RoundToInt(NowScore * 0.4f); //점수의 40% 획득
         }
         else if (Level == 2)
         {
-            Gold = Mathf.RoundToInt(NowScore * 0.5f); //점수의 75% 획득
+            Gold = Mathf.RoundToInt(NowScore * 0.5f); //점수의 50% 획득
         }
 
         PlusCoin_Title_txt.text = "";

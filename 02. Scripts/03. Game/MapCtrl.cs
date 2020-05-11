@@ -152,7 +152,7 @@ public class MapCtrl : MonoBehaviour
         Random_Human = 50;
         Random_Trash1 = 50;
         Random_Trash2 = 50;
-        Random_Mole = 30;
+        Random_Mole = 40;
         Random_God = 20;
         Random_Car = 50;
         Random_Castle = 100;

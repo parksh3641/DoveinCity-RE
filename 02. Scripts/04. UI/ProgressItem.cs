@@ -147,44 +147,120 @@ public class ProgressItem : MonoBehaviour
                 switch (Kind)
                 {
                     case 0:
-                        BD_Coin += Value;
-                        PlayerPrefs.SetInt("BD_Coin", BD_Coin);
+                        if(BD_Coin + Value > 9999999)
+                        {
+                            LanguageManager.instance.Max_Point_Notion();
+                        }
+                        else
+                        {
+                            BD_Coin += Value;
+                            PlayerPrefs.SetInt("BD_Coin", BD_Coin);
+
+                            Reward_Success();
+                        }
                         break;
                     case 1:
-                        BD_Diamond += Value;
-                        PlayerPrefs.SetInt("BD_Diamond", BD_Diamond);
+                        if (BD_Diamond + Value > 9999)
+                        {
+                            LanguageManager.instance.Max_Point_Notion();
+                        }
+                        else
+                        {
+                            BD_Diamond += Value;
+                            PlayerPrefs.SetInt("BD_Diamond", BD_Diamond);
+
+                            Reward_Success();
+                        }
                         break;
                     case 2:
-                        BD_Feather += Value;
-                        PlayerPrefs.SetInt("BD_Dora_Feather", BD_Feather);
+                        if (BD_Feather + Value > 999)
+                        {
+                            LanguageManager.instance.Max_Point_Notion();
+                        }
+                        else
+                        {
+                            BD_Feather += Value;
+                            PlayerPrefs.SetInt("BD_Dora_Feather", BD_Feather);
+
+                            Reward_Success();
+                        }
                         break;
                     case 3:
-                        BD_Dove_Egg += Value;
-                        PlayerPrefs.SetInt("BD_Dove_Egg", BD_Dove_Egg);
+                        if (BD_Dove_Egg + Value > 99)
+                        {
+                            LanguageManager.instance.Max_Point_Notion();
+                        }
+                        else
+                        {
+                            BD_Dove_Egg += Value;
+                            PlayerPrefs.SetInt("BD_Dove_Egg", BD_Dove_Egg);
+
+                            Reward_Success();
+                        }
                         break;
                     case 4:
-                        BD_Owl_Egg += Value;
-                        PlayerPrefs.SetInt("BD_Owl_Egg", BD_Owl_Egg);
+                        if (BD_Owl_Egg + Value > 99)
+                        {
+                            LanguageManager.instance.Max_Point_Notion();
+                        }
+                        else
+                        {
+                            BD_Owl_Egg += Value;
+                            PlayerPrefs.SetInt("BD_Owl_Egg", BD_Owl_Egg);
+
+                            Reward_Success();
+                        }
                         break;
                     case 5:
-                        BD_Eagle_Egg += Value;
-                        PlayerPrefs.SetInt("BD_Eagle_Egg", BD_Eagle_Egg);
+                        if (BD_Eagle_Egg + Value > 99)
+                        {
+                            LanguageManager.instance.Max_Point_Notion();
+                        }
+                        else
+                        {
+                            BD_Eagle_Egg += Value;
+                            PlayerPrefs.SetInt("BD_Eagle_Egg", BD_Eagle_Egg);
+
+                            Reward_Success();
+                        }
                         break;
                     case 6:
-                        BD_Gold_Egg += Value;
-                        PlayerPrefs.SetInt("BD_Gold_Egg", BD_Gold_Egg);
+                        if (BD_Gold_Egg + Value > 99)
+                        {
+                            LanguageManager.instance.Max_Point_Notion();
+                        }
+                        else
+                        {
+                            BD_Gold_Egg += Value;
+                            PlayerPrefs.SetInt("BD_Gold_Egg", BD_Gold_Egg);
+
+                            Reward_Success();
+                        }
                         break;
                     case 7:
-                        BD_Hard_Ticket += Value;
-                        PlayerPrefs.SetInt("BD_Hard_Ticket", BD_Hard_Ticket);
+                        if (BD_Hard_Ticket + Value > 99)
+                        {
+                            LanguageManager.instance.Max_Point_Notion();
+                        }
+                        else
+                        {
+                            BD_Hard_Ticket += Value;
+                            PlayerPrefs.SetInt("BD_Hard_Ticket", BD_Hard_Ticket);
+
+                            Reward_Success();
+                        }
                         break;
                     case 8:
                         BD_Owl += Value;
                         PlayerPrefs.SetInt("BD_Owl", BD_Owl);
+
+                        Reward_Success();
                         break;
                     case 9:
                         BD_Duck += Value;
                         PlayerPrefs.SetInt("BD_Duck", BD_Duck);
+
+                        Reward_Success();
                         break;
                 }
             }
@@ -195,13 +271,18 @@ public class ProgressItem : MonoBehaviour
                 {
                     PlayerPrefs.SetInt("Rank", rank);
                 }
+
+                Reward_Success();
             }
-
-            LanguageManager.instance.Success_Reward_Notion();
-
-            PlayerPrefs.SetInt("Box_Number_" + Box_Number, 1);
-
-            Rock.SetActive(true);
         }
+    }
+    void Reward_Success()
+    {
+        LanguageManager.instance.Success_Reward_Notion();
+
+        PlayerPrefs.SetInt("Box_Number_" + Box_Number, 1);
+        Rock.SetActive(true);
+
+        Renewal();
     }
 }

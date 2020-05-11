@@ -174,12 +174,14 @@ public class EffectManager : MonoBehaviour
     }
     public void Hp_Red_In()
     {
-        instance.Hp_Red = true;
-        instance.StartCoroutine(instance.Hp_Red_Song());
+        StopAllCoroutines();
+
+        Hp_Red = true;
+        StartCoroutine(Hp_Red_Song());
     }
     public void Hp_Red_Out()
     {
-        instance.Hp_Red = false;
+        Hp_Red = false;
     }
     IEnumerator Hp_Red_Song()
     {

@@ -45,6 +45,14 @@ public class SkillManager : MonoBehaviour
         Skill_Time = SystemManager.instance.Skill_Time;
         SkillCoolTime = SystemManager.instance.Skill_CoolTime;
 
+        SkillValue = true;
+
+        Skill_Filter.enabled = false;
+        Skill_txt.text = " ";
+
+        Skill_Filter.fillAmount = 1;
+
+        /*
         SkillValue = false;
 
         Skill_Filter.enabled = true;
@@ -53,6 +61,7 @@ public class SkillManager : MonoBehaviour
         Skill_Filter.fillAmount = 0;
         StartCoroutine(Skill_CoolTime_ReSet(Skill_Filter));
         StartCoroutine(Skill_CooltTme_Counter(SkillCoolTime, Skill_txt));
+        */
     }
 
     void OnEnable()

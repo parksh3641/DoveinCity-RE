@@ -109,7 +109,7 @@ public class EnemyCtrl : MonoBehaviour
         else
         {
             Enemy_Dove_Speed = SystemManager.instance.Dove_Speed * 1.5f;
-            Enemy_Eagle_Speed = SystemManager.instance.Dove_Speed * 1.75f;
+            Enemy_Eagle_Speed = SystemManager.instance.Dove_Speed * 1.5f;
         }
 
 
@@ -226,7 +226,7 @@ public class EnemyCtrl : MonoBehaviour
                 else
                 {
                     Enemy_Dove_Speed = SystemManager.instance.Dove_Speed * 1.5f;
-                    Enemy_Eagle_Speed = SystemManager.instance.Dove_Speed * 1.75f;
+                    Enemy_Eagle_Speed = SystemManager.instance.Dove_Speed * 1.5f;
                 }
 
                 Enemy_Check();
@@ -261,7 +261,7 @@ public class EnemyCtrl : MonoBehaviour
                 else
                 {
                     Enemy_Dove_Speed = SystemManager.instance.Dove_Speed * 1.5f;
-                    Enemy_Eagle_Speed = SystemManager.instance.Dove_Speed * 1.75f;
+                    Enemy_Eagle_Speed = SystemManager.instance.Dove_Speed * 1.5f;
                 }
 
                 Enemy_Check();
@@ -571,7 +571,7 @@ public class EnemyCtrl : MonoBehaviour
                             gameObject.SetActive(false);
                             if (Weather == 2) //비 오는 날에 체력 2배 회복
                             {
-                                GameManager.instance.Hp_Plus((Enemy_Dove_Damage / 2) * 2);
+                                GameManager.instance.Hp_Plus((Enemy_Dove_Damage / 2) * 3);
                                 GameManager.instance.Score_Plus(Enemy_Dove_Score);
                             }
                             else
@@ -585,8 +585,8 @@ public class EnemyCtrl : MonoBehaviour
                     {
                         if (Enemy_Black == 1 || Enemy_White == 1) //체력 나누어줌 개꿀
                         {
-                            GameManager.instance.Hp_Plus(Enemy_Dove_Damage / 3);
-                            GameManager.instance.Score_Plus(Enemy_Dove_Score / 3);
+                            GameManager.instance.Hp_Plus(Enemy_Dove_Damage / 2);
+                            GameManager.instance.Score_Plus(Enemy_Dove_Score / 2);
                         }
                     }
                 }

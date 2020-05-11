@@ -76,6 +76,8 @@ public class NestManager : MonoBehaviour
 
     public UISprite Strong_Weather;
     public UISprite Weak_Weather;
+    public UISprite Strong_Weather_Shadow;
+    public UISprite Weak_Weather_Shadow;
 
 
     //비둘기 능력치
@@ -578,10 +580,27 @@ public class NestManager : MonoBehaviour
         Eagle_Skill_Point_Save = PlayerPrefs.GetString("Eagle_Skill_Point_Save");
         Dora_Skill_Point_Save = PlayerPrefs.GetString("Dora_Skill_Point_Save");
 
-        Debug.Log("구구 : "+Black_Skill_Point_Save);
-        Debug.Log("루루 : "+White_Skill_Point_Save);
-        Debug.Log("수리수리 : "+Eagle_Skill_Point_Save);
-        Debug.Log("도라 : "+Dora_Skill_Point_Save);
+        if(Black_Skill_Point_Save == null)
+        {
+            PlayerPrefs.SetString("Black_Skill_Point_Save", "0000000000");
+        }
+        if (White_Skill_Point_Save == null)
+        {
+            PlayerPrefs.SetString("White_Skill_Point_Save", "0000000000");
+        }
+        if (Eagle_Skill_Point_Save == null)
+        {
+            PlayerPrefs.SetString("Eagle_Skill_Point_Save", "0000000000");
+        }
+        if (Dora_Skill_Point_Save == null)
+        {
+            PlayerPrefs.SetString("Dora_Skill_Point_Save", "0000000000");
+        }
+
+        //Debug.Log("구구 : "+Black_Skill_Point_Save);
+        //Debug.Log("루루 : "+White_Skill_Point_Save);
+        //Debug.Log("수리수리 : "+Eagle_Skill_Point_Save);
+        //Debug.Log("도라 : "+Dora_Skill_Point_Save);
 
 
         //불러온 후 변환
@@ -947,18 +966,25 @@ public class NestManager : MonoBehaviour
             WEAK_WEATHER.text = Nest_Language[11];
 
             Strong_Weather.spriteName = "Moon";
+            Strong_Weather_Shadow.spriteName = "Moon";
+
             Weak_Weather.spriteName = "Sun";
+            Weak_Weather_Shadow.spriteName = "Sun";
             Main_Background.color = new Color(1,1,1);
         }
         else if (number == 2)
         {
             Main_name.text = Nest_Language[2];
-            DIFFICULTY.text = Nest_Language[9];
+            DIFFICULTY.text = Nest_Language[8];
             STRONG_WEATHER.text = Nest_Language[11];
             WEAK_WEATHER.text = Nest_Language[12];
 
             Strong_Weather.spriteName = "Sun";
+            Strong_Weather_Shadow.spriteName = "Sun";
+
             Weak_Weather.spriteName = "Moon";
+            Weak_Weather_Shadow.spriteName = "Moon";
+
             Main_Background.color = new Color(1, 200 / 255f, 1);
         }
         else if (number == 3)
@@ -969,18 +995,26 @@ public class NestManager : MonoBehaviour
             WEAK_WEATHER.text = Nest_Language[11];
 
             Strong_Weather.spriteName = "Rain";
+            Strong_Weather_Shadow.spriteName = "Rain";
+
             Weak_Weather.spriteName = "Sun";
+            Weak_Weather_Shadow.spriteName = "Sun";
+
             Main_Background.color = new Color(0, 200 / 255f, 1);
         }
         else if (number == 4)
         {
             Main_name.text = Nest_Language[4];
-            DIFFICULTY.text = Nest_Language[8];
+            DIFFICULTY.text = Nest_Language[9];
             STRONG_WEATHER.text = Nest_Language[11];
             WEAK_WEATHER.text = Nest_Language[12];
 
             Strong_Weather.spriteName = "Sun";
+            Strong_Weather_Shadow.spriteName = "Sun";
+
             Weak_Weather.spriteName = "Moon";
+            Weak_Weather_Shadow.spriteName = "Moon";
+
             Main_Background.color = new Color(1, 1, 0);
         }
     }
@@ -1101,8 +1135,7 @@ public class NestManager : MonoBehaviour
             Skin_Cannot(label);
         }
         else if(Choice == 4)
-        {
-            /*
+        {         
             if (number[2] == 0)
             {
                 btn.color = new Color(0, 1, 0, 1);
@@ -1112,10 +1145,9 @@ public class NestManager : MonoBehaviour
             {
                 btn.color = new Color(1, 0, 0, 1);
                 Skin_Off(label);
-            }
-            */
-            btn.color = new Color(1, 0, 0, 1);
-            Skin_Cannot(label);
+            }        
+            //btn.color = new Color(1, 0, 0, 1);
+            //Skin_Cannot(label);
         }
     } //스킨 착용 여부
 
@@ -1271,14 +1303,14 @@ public class NestManager : MonoBehaviour
     {
         if (BD_Dora == 0)
         {
-            if (BD_Coin >= 100000)
+            if (BD_Coin >= 75000)
             {
                 //업적 - 코인 사용
                 int a = PlayerPrefs.GetInt("Achieve_Coin");
-                a += 100000;
+                a += 75000;
                 PlayerPrefs.SetInt("Achieve_Coin", a);
 
-                BD_Coin -= 100000;
+                BD_Coin -= 75000;
                 PlayerPrefs.SetInt("BD_Coin", BD_Coin);
                 Dove_UnRocked_Notion();
                 EffectManager.instance.Box_Open_3();
@@ -1358,7 +1390,7 @@ public class NestManager : MonoBehaviour
             }
             else if (Choice == 4)
             {
-                /*
+                
                 if (BD_Sunshine_Dress[2] == 0)
                 {
                     BD_Sunshine_Dress[2] = 1;
@@ -1379,8 +1411,8 @@ public class NestManager : MonoBehaviour
                     PlayerPrefs.SetInt("Clocking_Dora", 0);
                     PlayerPrefs.SetInt("Rainbow_Dora", 0);
                 }
-                */
-                Not_Equip_Skin_Notion();
+                
+                //Not_Equip_Skin_Notion();
 
             }
 
@@ -1452,7 +1484,7 @@ public class NestManager : MonoBehaviour
             }
             else if (Choice == 4)
             {
-                /*
+                
                 if (BD_Clocking_Dress[2] == 0)
                 {
                     BD_Sunshine_Dress[2] = 0;
@@ -1473,8 +1505,8 @@ public class NestManager : MonoBehaviour
                     PlayerPrefs.SetInt("Clocking_Dora", 0);
                     PlayerPrefs.SetInt("Rainbow_Dora", 0);
                 }
-                */
-                Not_Equip_Skin_Notion();
+                
+                //Not_Equip_Skin_Notion();
             }
 
             Fly_Setting(Choice);
@@ -1543,7 +1575,7 @@ public class NestManager : MonoBehaviour
             }
             else if (Choice == 4)
             {
-                /*
+                
                 if (BD_Rainbow_Dress[2] == 0)
                 {
                     BD_Sunshine_Dress[2] = 0;
@@ -1564,8 +1596,8 @@ public class NestManager : MonoBehaviour
                     PlayerPrefs.SetInt("Clocking_Dora", 0);
                     PlayerPrefs.SetInt("Rainbow_Dora", 0);
                 }
-                */
-                Not_Equip_Skin_Notion();
+                
+                //Not_Equip_Skin_Notion();
             }
 
             Fly_Setting(Choice);
@@ -2089,9 +2121,9 @@ public class NestManager : MonoBehaviour
         }
 
 
-        if (Skill_Point_All < Skill_Point_Total)
+        if (BD_Dora_Feather >= 1)
         {
-            if (BD_Dora_Feather >= 1)
+            if (Skill_Point_All < Skill_Point_Total)
             {
                 BD_Dora_Feather -= 1;
                 PlayerPrefs.SetInt("BD_Dora_Feather", BD_Dora_Feather);
@@ -2138,12 +2170,12 @@ public class NestManager : MonoBehaviour
             }
             else
             {
-                LanguageManager.instance.Low_Feather_Notion();
+                LanguageManager.instance.Error_Reset_Notion();
             }
         }
         else
         {
-            LanguageManager.instance.Error_Reset_Notion();
+            LanguageManager.instance.Low_Feather_Notion();
         }
     }
 }

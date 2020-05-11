@@ -101,7 +101,7 @@ public class ProgressManager : MonoBehaviour
         AllScore_txt.text = AllScore.ToString();
         Score_Check();
 
-        Progress_Which.transform.localPosition = new Vector3(-420, -710);
+        Progress_Which.transform.localPosition = new Vector3(-420, -680);
 
         a = 0;
         b = 0;
@@ -157,7 +157,7 @@ public class ProgressManager : MonoBehaviour
                 else
                 {
                     Fillter.fillAmount = 0.02f + (a * 0.04f) + (b * 0.008f) + (c * 0.0008f);
-                    Progress_Which.transform.localPosition = new Vector3(-420 + (a * 120) + (b * 24) + (c * 2.4f), -690);
+                    Progress_Which.transform.localPosition = new Vector3(-420 + (a * 120) + (b * 24) + (c * 2.4f), -680);
                     float d = Progress_Which.transform.localPosition.x / 2050;
                     Scroll.SetDragAmount(d, 0, false);
                     yield break;
@@ -192,7 +192,7 @@ public class ProgressManager : MonoBehaviour
                 else
                 {
                     Fillter.fillAmount = 0.5f + (a * 0.04f) + (b * 0.004f) + (c * 0.0004f);
-                    Progress_Which.transform.localPosition = new Vector3(1020 + (a * 120) + (b * 12) + (c * 1.2f), -690);
+                    Progress_Which.transform.localPosition = new Vector3(1020 + (a * 120) + (b * 12) + (c * 1.2f), -680);
                     float d = Progress_Which.transform.localPosition.x / 2050;
                     Scroll.SetDragAmount(d, 0, false);
                     yield break;

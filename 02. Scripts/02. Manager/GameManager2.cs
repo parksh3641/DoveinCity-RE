@@ -24,6 +24,7 @@ public class GameManager2 : MonoBehaviour
     //날씨
 
     public UISprite Weather_Sprite;
+    public UISprite Weather_Sprite_Shadow;
     private int Save_Weather_Value = 0;
     public int Weather_Value; //0 = 낮, 1 = 밤, 2 = 비
     public float Weather_Cycle_Value; //날씨가 변경되는 값
@@ -63,6 +64,8 @@ public class GameManager2 : MonoBehaviour
 
     public float Item1_Time; //시간 저장용
     public float Item2_Time;
+    public float Item1_Time_Min = 0;
+    public float Item2_Time_Min = 0;
 
     public bool Item1_Use; //자리 있는지
     public bool Item2_Use;
@@ -648,15 +651,19 @@ public class GameManager2 : MonoBehaviour
     {
         if (Item1_Time >= 60)
         {
-            Item1_txt.text = "1:" + (Item1_Time - 60).ToString();
-        }
-        else if (Item1_Time >= 10)
-        {
-            Item1_txt.text = "0:" + Item1_Time.ToString();
+            Item1_Time_Min = Item1_Time / 60;
+            Item1_txt.text = (int)Item1_Time_Min + ":" + (Item1_Time - (60 * (int)Item1_Time_Min)).ToString();
         }
         else
         {
-            Item1_txt.text = "0:0" + Item1_Time.ToString();
+            if (Item1_Time >= 10)
+            {
+                Item1_txt.text = "0:" + Item1_Time.ToString();
+            }
+            else
+            {
+                Item1_txt.text = "0:0" + Item1_Time.ToString();
+            }
         }
 
         yield return new WaitForSeconds(Item_Down_Speed);
@@ -724,15 +731,19 @@ public class GameManager2 : MonoBehaviour
     {
         if (Item2_Time >= 60)
         {
-            Item2_txt.text = "1:" + (Item2_Time - 60).ToString();
-        }
-        else if (Item2_Time >= 10)
-        {
-            Item2_txt.text = "0:" + Item2_Time.ToString();
+            Item2_Time_Min = Item2_Time / 60;
+            Item2_txt.text = (int)Item2_Time_Min + ":" + (Item2_Time - (60 * (int)Item2_Time_Min)).ToString();
         }
         else
         {
-            Item2_txt.text = "0:0" + Item2_Time.ToString();
+            if (Item2_Time >= 10)
+            {
+                Item2_txt.text = "0:" + Item2_Time.ToString();
+            }
+            else
+            {
+                Item2_txt.text = "0:0" + Item2_Time.ToString();
+            }
         }
 
         yield return new WaitForSeconds(Item_Down_Speed);
@@ -802,6 +813,7 @@ public class GameManager2 : MonoBehaviour
         if (number == 0)
         {
             Weather_Sprite.spriteName = "Sun";
+            Weather_Sprite_Shadow.spriteName = "Sun";
             //Debug.Log("낮");
             StartCoroutine(Weather_Dark_Down());
             StartCoroutine(Weather_Rain_Down());
@@ -811,6 +823,7 @@ public class GameManager2 : MonoBehaviour
         else if(number == 1)
         {
             Weather_Sprite.spriteName = "Moon";
+            Weather_Sprite_Shadow.spriteName = "Moon";
             //Debug.Log("밤");
             Dark.SetActive(true);
             StartCoroutine(Weather_Dark_Up(Dark_Max_Alpha));
@@ -821,6 +834,7 @@ public class GameManager2 : MonoBehaviour
         else if (number == 2)
         {
             Weather_Sprite.spriteName = "Rain";
+            Weather_Sprite_Shadow.spriteName = "Rain";
             //Debug.Log("비");
             EffectManager.instance.Rain_Song_On();
 

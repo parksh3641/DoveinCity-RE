@@ -28,6 +28,7 @@ public class LanguageManager : MonoBehaviour
 
     //점수 상세창
     public UILabel Main_Detail_Total;
+    public UILabel Main_Detail_All;
 
     //등급 상세창
     public UILabel Main_Detail_Rank;
@@ -48,16 +49,16 @@ public class LanguageManager : MonoBehaviour
 
     private List<UILabel> Main_txt = new List<UILabel>();
 
-    private string[] Main_Korean = { "모험", "둥지", "업적", "상점", "기록", "도감" ,"닉네임","최고 점수","등급","합계","등급","코인","점수",
+    private string[] Main_Korean = { "플레이", "둥지", "업적", "상점", "기록", "도감" ,"닉네임","최고 점수","등급","합계","누적 점수","등급","코인","점수",
     "게임 종료","게임을 종료하시겠습니까?","예","아니요","게임 평가","\n게임에 대한 평점을 남겨주세요\n감사의 표시로 200다이아를 드릴께요!\n","예","아니요"};
 
-    private string[] Main_English = { "Adventure", "Nest", "Achv", "Shop", "Record", "Book","NICKNAME","HIGH SCORE","RANK","Total","Rank","Coin","Score",
+    private string[] Main_English = { "Play", "Nest", "Achv", "Shop", "Record", "Book","NICKNAME","HIGH SCORE","RANK","Total","Total Score","Rank","Coin","Score",
     "Confirm Exit","Do you want to quit the game?","Okay","Cancel","Rate Game","Would you mind taking a moment to rate it?\nThen I'll give you 200 gems as a token of my gratitude!","Rate it Now","No Thanks"};
 
-    private string[] Main_Chinese = { "冒险", "巢穴", "业绩", "商店", "记录", "图鉴","昵称","最高分","等级","合计","等级","硬币","分数",
+    private string[] Main_Chinese = { "玩", "巢穴", "业绩", "商店", "记录", "图鉴","昵称","最高分","等级","合计","累积分数","等级","硬币","分数",
     "游戏结束","确定要结束游戏吗?","是","不是","游戏评价","\n请给游戏留下评分?\n为表示感谢,给您200个宝石!\n","估量","不用了"};
 
-    private string[] Main_Japanese = { "冒険", "巣", "業績", "店", "記録", "図鑑","ニックネーム","最高点","ランク","合計","ランク","コイン","スコア",
+    private string[] Main_Japanese = { "プレー", "巣", "業績", "店", "記録", "図鑑","ニックネーム","最高点","ランク","合計","点数を得る","ランク","コイン","スコア",
     "終了を確認","ゲームを終了しますか?","はい","いいえ","ゲーム評価","少し時間を取って評価していただけますか\nそれから私はあなたに感謝として200ダイヤモンドを与えます！","今すぐ評価する","遠慮します"};
 
 
@@ -95,19 +96,19 @@ public class LanguageManager : MonoBehaviour
     private List<UILabel> Option_txt = new List<UILabel>();
 
     private string[] Option_Korean = { "설정", "음악", "효과음", "진동", "구글 플레이 로그인", "언어", "언어", "한국어", "쿠폰", "이름 변경", "제작진", "도움말",
-    "쿠폰 입력","교환","이름 변경","도움말","블로그","평가하기"};
+    "쿠폰 입력","교환","이름 변경(2~8)","도움말","블로그","평가하기"};
     private string[] Option_Korean_On = { "켜짐", "꺼짐" };
 
     private string[] Option_English = {"Option", "Music", "SFX", "Vibration", "Google Play Sign_in", "Language","Language", "English", "Coupon", "Change Name", "Credit", "Help",
-    "Enter Coupon","Exchange","Change Name","Help","Blog","Rate"};
+    "Enter Coupon","Exchange","Change Name(2~8)","Help","Blog","Rate"};
     private string[] Option_English_On = { "ON", "OFF" };
 
     private string[] Option_Chinese = { "设定", "音乐", "效果音", "振动", "Google Play 登录 ", "语言", "语言", "簡体中文", "优惠券", "更名", "制作组", "助词",
-    "输入优惠券","交换","更名","助词","博客","估价"};
+    "输入优惠券","交换","更名(2~8)","助词","博客","估价"};
     private string[] Option_Chinese_On = { "打开", "熄灭" };
 
     private string[] Option_Japanese = { "設定", "音楽", "効果音", "振動", "Google Play サインイン", "言語", "言語", "日本語", "クーポン", "名前の変更", "スタッフ", "ヘルプ",
-    "クーポンを入力","交換","名前を変える","助けて","ブログ","評価"};
+    "クーポンを入力","交換","名前を変える(2~8)","助けて","ブログ","評価"};
     private string[] Option_Japanese_On = { "オン", "オフ" };
 
     //게임 선택창
@@ -139,16 +140,16 @@ public class LanguageManager : MonoBehaviour
 
 
     private string[] GameStart_Korean = { "난이도 선택","튜토리얼","싱글 플레이","쉬움","보통","어려움","초보자를 위한 모드입니다.","일반적인 모험 모드입니다.","하드코어 유저를 위한 모드입니다.",
-    "멀티 플레이","접속하기","사람들과 함께 보스를 처지하고 전리품을 획득하세요!","조력자 선택","레벨 업","밤에 체력을 회복합니다.","레벨 업","날아오는 물체를 막아줍니다.","없음","모험 시작!","잠금 해제","잠금 해제"};
+    "멀티 플레이","접속하기","사람들과 함께 보스를 처지하고 전리품을 획득하세요!","조력자 선택","레벨 업","밤에 체력을 회복합니다.","레벨 업","날아오는 물체를 막아줍니다.","없음","게임 시작","잠금 해제","잠금 해제"};
 
     private string[] GameStart_English = { "Select Difficulties","Tutorial","Single Play","Easy","Normal","Hard","This mode is for beginners.","Typical Adventure mode.","Mode for hardcore users.",
-    "Multi Play"," Connect","Eliminate the Boss with People and Win the spoils!","Select Helper","Level Up","Rejuvenate at night.","Level Up","It blocks the flying object.","None","Start adventure!","Unlock","Unlock"};
+    "Multi Play"," Connect","Eliminate the Boss with People and Win the spoils!","Select Helper","Level Up","Rejuvenate at night.","Level Up","It blocks the flying object.","None","Game Start","Unlock","Unlock"};
 
     private string[] GameStart_Chinese = { "难易度选择","教程","Single Play","下", "中", "上","是为新手设计的模式。","一般的冒险模式。","为硬核用户的模式。",
-    "Multi Play","连接","与人一起处置老板,获得战利品!","助手的选择","升级","晚上恢复体力。","等级","阻挡飞来的物体。","无","冒险开始!","解锁","解锁"};
+    "Multi Play","连接","与人一起处置老板,获得战利品!","助手的选择","升级","晚上恢复体力。","等级","阻挡飞来的物体。","无","游戏开始","解锁","解锁"};
 
     private string[] GameStart_Japanese = { "難易度選択","チュートリアル","チュートリアル","下", "中", "上","このモードは初心者向けです。","通常のアドベンチャーモード。","このモードは、ハードコアユーザー向けです。",
-    "マルチプレイ","つなぐ","人と一緒にボスを倒して戦利品を獲得してください!","ヘルパーの選択","レベルアップ","夜に若返り。","レベルアップ","飛行物体を防ぎます。","なし","冒険スタート!","ロック解除","ロック解除"};
+    "マルチプレイ","つなぐ","人と一緒にボスを倒して戦利品を獲得してください!","ヘルパーの選択","レベルアップ","夜に若返り。","レベルアップ","飛行物体を防ぎます。","なし","ゲームスタート。","ロック解除","ロック解除"};
 
     //둥지
     public UILabel Nest_Main_Black;
@@ -249,7 +250,7 @@ public class LanguageManager : MonoBehaviour
     private string[] Shop_Chinese = { "店","鸡蛋信息","卵培养箱","蛋","免费的","项目","硬币","免费的","鸡蛋信息" ,"共同","出口","您触摸的鸡蛋会立即打开"};
     private string[] Shop_Japanese = { "店","卵情報", "卵孵化", "卵","無料", "アイテム", "コイン", "無料","卵情報", "共通", "出口" , "クリックした卵はすぐ孵化します" };
 
-    public string[] Shop_Main_Korean = { "비둘기 알", "부엉이 알", "독수리 알", "황금 알", "입장권", "광고 시청", "코인 주머니", "코인 바구니", "코인 통" };
+    public string[] Shop_Main_Korean = { "비둘기 알", "부엉이 알", "독수리 알", "황금 알", "입장권", "광고 시청", "코인 주머니", "코인 바구니", "코인 통" ,"보물 상자"};
     public string[] Shop_Rare_Korean = { "희귀", "초희귀", "영웅", "전설", "어려움 난이도" };
     public string[] Shop_Buy_Korean = { "구매", "시청" };
 
@@ -257,7 +258,7 @@ public class LanguageManager : MonoBehaviour
     public string[] Incubator_Rare_Korean = { "소비 아이템", "퀘스트 아이템", "스킨 아이템", "캐릭터 아이템" };
 
 
-    public string[] Shop_Main_English = { "Dove Egg", "Owl Egg","Eagle Egg", "Gold Egg", "Admission", "Watch an Ad", "Pouch of Coins", "Bucket of Coins", "Barrel of Gems" };
+    public string[] Shop_Main_English = { "Dove Egg", "Owl Egg","Eagle Egg", "Gold Egg", "Admission", "Watch an Ad", "Pouch of Coins", "Bucket of Coins", "Barrel of Gems","Treasure Box"};
     public string[] Shop_Rare_English = { "Rare", "Super Rare", "Epic", "Legendary", "Hard Level" };
     public string[] Shop_Buy_English = { "Confirm", "Watch" };
 
@@ -265,7 +266,7 @@ public class LanguageManager : MonoBehaviour
     public string[] Incubator_Rare_English = { "Consumption Item", "Quest Item", "Skin Item", "Character Item" };
 
 
-    public string[] Shop_Main_Chinese = { "鸽子蛋" , "猫头鹰卵", "老鹰蛋", "金蛋", "门票", "观看广告", "硬币袋", "硬币篮子", "硬币筒" };
+    public string[] Shop_Main_Chinese = { "鸽子蛋" , "猫头鹰卵", "老鹰蛋", "金蛋", "门票", "观看广告", "硬币袋", "硬币篮子", "硬币筒" ,"宝盒"};
     public string[] Shop_Rare_Chinese = { "稀有", "超级稀有", "史诗般的", "传说", "难易度" };
     public string[] Shop_Buy_Chinese = { "采购", "收视" };
 
@@ -273,7 +274,7 @@ public class LanguageManager : MonoBehaviour
     public string[] Incubator_Rare_Chinese = { "消费项目", "奎斯特单品", "皮肤项目","角色项目"};
 
 
-    public string[] Shop_Main_Japanese = { "鳩アル", "フクロウの卵", "ワシアルの卵", "金の卵" ,"入場券", "広告視聴", "コインポケット","コインバスケット","コイン桶"};
+    public string[] Shop_Main_Japanese = { "鳩アル", "フクロウの卵", "ワシアルの卵", "金の卵" ,"入場券", "広告視聴", "コインポケット","コインバスケット","コイン桶", "宝箱 "};
     public string[] Shop_Rare_Japanese = { "希少", "超希少", "英雄", "伝説","ハードレベル"};
     public string[] Shop_Buy_Japanese = { "確認","見る" };
 
@@ -470,17 +471,17 @@ public class LanguageManager : MonoBehaviour
 
     private List<UILabel> Tutorial_txt = new List<UILabel>();
 
-    private string[] Tutorial_Korean = { "설정", "나가기", "계속하기" };
-    public string[] Tutorial_Title_Korean = { "튜토리얼", "잘했어요!", "체력","사망하였습니다." };
+    private string[] Tutorial_Korean = { "설정", "나가기", "계속하기"};
+    public string[] Tutorial_Title_Korean = { "튜토리얼", "잘했어요!", "체력","사망하였습니다." , "건너뛰기" };
 
     private string[] Tutorial_English = { "Option","Continue","Exit" };
-    public string[] Tutorial_Title_English = { "Tutorial","Good!","HP", "You Died." };
+    public string[] Tutorial_Title_English = { "Tutorial","Good!","HP", "You Died.", "SKIP" };
 
     private string[] Tutorial_Chinese = { "设定", "出口", "继续" };
-    public string[] Tutorial_Title_Chinese = { "教程","好!", "生命值", "已死亡。" };
+    public string[] Tutorial_Title_Chinese = { "教程","好!", "生命值", "已死亡。", "漏斗" };
 
     private string[] Tutorial_Japanese = { "オプション", "出口", "継続" };
-    public string[] Tutorial_Title_Japanese = { "チュートリアル", "良い!", "体力", "死亡しました。" };
+    public string[] Tutorial_Title_Japanese = { "チュートリアル", "良い!", "体力", "死亡しました。", "サボウル" };
 
     void Awake()
     {
@@ -502,6 +503,7 @@ public class LanguageManager : MonoBehaviour
             Main_txt.Add(Main_Rank);
 
             Main_txt.Add(Main_Detail_Total);
+            Main_txt.Add(Main_Detail_All);
             Main_txt.Add(Main_Detail_Rank);
             Main_txt.Add(Main_Detail_Coin);
             Main_txt.Add(Main_Detail_Score);
@@ -1228,6 +1230,7 @@ public class LanguageManager : MonoBehaviour
                 Default_Notion_Open("最高レベルです。", 3, 0);
                 break;
         }
+        Bad_Sound();
     }
 
     public void Now_Hold_Notion()
@@ -1598,6 +1601,26 @@ public class LanguageManager : MonoBehaviour
                 Default_Notion_Open("しばらくして視聴することができます。", 3, 0);
                 break;
         }
+    }
+
+    public void Max_Point_Notion()
+    {
+        switch (Language)
+        {
+            case 0:
+                Default_Notion_Open("더 이상 획득할 수 없습니다.", 0, 0);
+                break;
+            case 1:
+                Default_Notion_Open("Cannot acquire any more.", 0, 0);
+                break;
+            case 2:
+                Default_Notion_Open("不能再获得。", 0, 0);
+                break;
+            case 3:
+                Default_Notion_Open("これ以上獲得できません。", 0, 0);
+                break;
+        }
+        Bad_Sound();
     }
 
     //인게임 관련

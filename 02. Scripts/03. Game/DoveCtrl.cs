@@ -1042,10 +1042,10 @@ public class DoveCtrl : MonoBehaviour
         {
             if (Skill_Use == true)
             {
-                if (Dove_Size <= 0.26f)
+                if (Dove_Size <= 0.39f)
                 {
-                    Dove_Size += 0.00039f;
-                    Shadow_Size -= 0.00105f;
+                    Dove_Size += 0.00078f;
+                    Shadow_Size -= 0.00210f;
                 }
             }
             else
@@ -1070,8 +1070,8 @@ public class DoveCtrl : MonoBehaviour
         {
             if (Dove_Size >= 0.13f)
             {
-                Dove_Size -= 0.00039f;
-                Shadow_Size += 0.00105f;
+                Dove_Size -= 0.00078f;
+                Shadow_Size += 0.00210f;
             }
             else
             {

@@ -141,8 +141,8 @@ public class MapRandom : MonoBehaviour
         Max_Building = 40;
         Max_OliveTree = 1;
         Max_Human = 80;
-        Max_Trash1 = 8;
-        Max_Trash2 = 8;
+        Max_Trash1 = 10;
+        Max_Trash2 = 10;
         Max_Mole = 2;
         Max_God = 5;
         Max_Car_Right = 15;

@@ -19,7 +19,7 @@ public class Shop : MonoBehaviour
 
     public UISprite Main_Sprite; //메인 그림
 
-    private string[] Main_Name = { "비둘기 알", "부엉이 알", "독수리 알", "황금 알", "하드 모드 티켓" }; //메인 스프라이트 이름
+    private string[] Main_Name = { "비둘기 알", "부엉이 알", "독수리 알", "황금 알", "하드 모드 티켓", "보물상자_UI" }; //메인 스프라이트 이름
 
     //아이템 생동감
     private Coin Main_Coin;
@@ -30,7 +30,7 @@ public class Shop : MonoBehaviour
     public UISprite Sub_Sprite; //메인 그림
 
     private int Request_Value; //0 = 코인, 1 = 다이아, 2 = 도라의 깃털, 9 = 광고(값 없음)
-    private int[] Request_Value_Number = { 0, 0, 2, 1, 0, 0, 1, 1, 1 };
+    private int[] Request_Value_Number = { 0, 0, 2, 1, 0, 0, 1, 1, 1, 1 };
     private string[] Request_Name = { "Coin_1", "다이아", "도라의 깃털" }; //값어치 스프라이트 이름
     private Coin Request_Coin;
 
@@ -54,10 +54,11 @@ public class Shop : MonoBehaviour
     private int BD_Gold_Egg;
 
     private int BD_Hard_Ticket;
+    private int BD_Treasure_Box;
 
     //구매
     private int Buy_Value;
-    private int[] Buy_Value_Number = { 2000, 4500, 3, 100, 1500, 0, 10, 100, 200 };
+    private int[] Buy_Value_Number = { 2000, 4500, 3, 150, 1500, 0, 10, 100, 200, 50 };
 
 
     void Awake()
@@ -204,6 +205,9 @@ public class Shop : MonoBehaviour
             case 6:
                 Buy_txt.text = Shop_Buy[1];
                 break;
+            case 10:
+                Rare_txt.text = Shop_Rare[1];
+                break;
 
         }
     }
@@ -230,6 +234,7 @@ public class Shop : MonoBehaviour
         BD_Gold_Egg = PlayerPrefs.GetInt("BD_Gold_Egg");
 
         BD_Hard_Ticket = PlayerPrefs.GetInt("BD_Hard_Ticket");
+        BD_Treasure_Box = PlayerPrefs.GetInt("BD_Treasure_Box");
 
         Check_Value(value);
     }
@@ -281,6 +286,11 @@ public class Shop : MonoBehaviour
                 break;
             case 9:
                 Hold_Number_txt.enabled = false;
+                break;
+            case 10:
+                Main_Coin.enabled = false;
+                Main_Sprite.spriteName = Main_Name[5];
+                Hold_Number_txt.text = BD_Treasure_Box.ToString();
                 break;
         }
     }
@@ -421,6 +431,10 @@ public class Shop : MonoBehaviour
                         Max_limit_Notion();
                     }
                 }
+                else
+                {
+                    LanguageManager.instance.Rocked_Notion();
+                }
             }
             else
             {
@@ -451,6 +465,10 @@ public class Shop : MonoBehaviour
             {
                 LanguageManager.instance.Low_Feather_Notion();
             }
+        }
+        else if(Request_Value == 3) //마일리지 구매
+        {
+
         }
     }
 }

@@ -12,6 +12,7 @@ public class TitleManager : MonoBehaviour
     public GameObject Logo3; //위대하지않음
     public GameObject Logo4; //전체
 
+    public UISprite Main_Background;
     public GameObject Background; //터치관련
     public BoxCollider2D box;
     public GameObject Logo_txt; //BURNING DIAMOND GAMES
@@ -62,9 +63,26 @@ public class TitleManager : MonoBehaviour
     void Start()
     {
         box.enabled = false;
-
+        Background_Change();
 
         StartCoroutine(LogoStart());
+    }
+
+    public void Background_Change()
+    {
+        int a = Random.Range(0, 3);
+        switch (a)
+        {
+            case 0:
+                Main_Background.spriteName = "Cloud";
+                break;
+            case 1:
+                Main_Background.spriteName = "Night";
+                break;
+            case 2:
+                Main_Background.spriteName = "Green";
+                break;
+        }
     }
 
     IEnumerator LogoStart()
@@ -92,6 +110,13 @@ public class TitleManager : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         source.clip = MainTheme;
         source.Play();
+
+        int a = PlayerPrefs.GetInt("Login"); //자동 로그인
+        if (a == 2)
+        {
+            Login_GooglePlay();
+        }
+
         yield return new WaitForSeconds(0.5f);
         Touch.GetComponent<UILabel>().color = new Color(0, 0, 0, 1);
         Touch.SetActive(true);

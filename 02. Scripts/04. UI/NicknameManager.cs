@@ -17,6 +17,7 @@ public class NicknameManager : MonoBehaviour
 
     private int BD_Coin;
     private int BD_Diamond;
+    private int BD_Feather;
     private int Nickname_Change_Number;
 
     private int[] Change_Value = { 0, 50, 100, 200, 300, 400, 500, 500 };
@@ -125,6 +126,8 @@ public class NicknameManager : MonoBehaviour
                             PlayerPrefs.SetInt("BD_Coin", BD_Coin);
                             BD_Diamond += 250;
                             PlayerPrefs.SetInt("BD_Diamond", BD_Diamond);
+                            BD_Feather = 10;
+                            PlayerPrefs.SetInt("BD_Dora_Feather", BD_Feather);
                         }
                     }
                     else

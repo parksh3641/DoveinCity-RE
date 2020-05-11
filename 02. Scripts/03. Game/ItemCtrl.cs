@@ -71,13 +71,13 @@ public class ItemCtrl : MonoBehaviour
 
         if (Under == 0)
         {
-            Random_Item(20, 10, 10, 10, 10, 10, 10, 10, 10, 0);
+            Random_Item(25, 10, 5, 10, 10, 10, 10, 10, 10, 0);
             x = DoveCtrl.instance.x;
             StartCoroutine(Player_Distance());
         }
         else if(Under == 1)
         {
-            Random_Item(20, 60, 20, 0, 0, 0, 0, 0, 0, 0);
+            Random_Item(25, 50, 25, 0, 0, 0, 0, 0, 0, 0);
         }
         else if (Under == 2)
         {
@@ -200,7 +200,7 @@ public class ItemCtrl : MonoBehaviour
                     }
                     else
                     {
-                        GameManager.instance.Diamond_Plus(Item_Diamond_Number * 10);
+                        GameManager.instance.Diamond_Plus(Item_Diamond_Number * 20);
                     }
                 }
                 else if (Value == 2)
@@ -211,7 +211,7 @@ public class ItemCtrl : MonoBehaviour
                     }
                     else
                     {
-                        GameManager.instance.Dora_Feather_Plus(Item_Dora_Number * 3);
+                        GameManager.instance.Dora_Feather_Plus(Item_Dora_Number * 5);
                     }
 
                 }

@@ -67,6 +67,7 @@ public class SelectManager : MonoBehaviour
     public UILabel Detail_Eagle_HighScore_txt;
     public UILabel Detail_Dora_HighScore_txt;
     public UILabel Detail_HighScore_txt;
+    public UILabel Detail_AllScore_txt;
 
     public UILabel Detail_Black_Rank_txt;
     public UILabel Detail_White_Rank_txt;
@@ -124,6 +125,8 @@ public class SelectManager : MonoBehaviour
 
     private int Level;
 
+    private int Hidden_Song_Count = 0;
+
 
     //배경화면
     public UISprite Main_Background;
@@ -132,6 +135,7 @@ public class SelectManager : MonoBehaviour
     private AudioSource source;
     public AudioClip shop;
     public AudioClip credit;
+    public AudioClip hidden;
 
     void Awake()
     {
@@ -141,6 +145,7 @@ public class SelectManager : MonoBehaviour
         Background_Change();
 
         Level = 0;
+        Hidden_Song_Count = 0;
 
         instance = this;
 
@@ -203,16 +208,19 @@ public class SelectManager : MonoBehaviour
         DefaultOption();
 
         AllScore = PlayerPrefs.GetInt("AllScore");
+
         int a = PlayerPrefs.GetInt("AllScore_Save");
-        if (AllScore >= 10000 && a == 0)
+        int b = PlayerPrefs.GetInt("2016041820161103");
+
+        if (AllScore >= 10000 && a == 0 && b == 0)
         {
             WindowValue = 18;
             GameRatingWindow.SetActive(true);
             PlayerPrefs.SetInt("AllScore_Save", 1);
         }
 
-        int b = PlayerPrefs.GetInt("Tutorial");
-        if (b == 1)
+        int c = PlayerPrefs.GetInt("Tutorial");
+        if (c == 1)
         {
             WindowValue = 20;
             TutorialWindow.SetActive(true);
@@ -229,9 +237,22 @@ public class SelectManager : MonoBehaviour
         StartCoroutine(Renewal_Money());
     }
 
+    public void Hidden_Song()
+    {
+        if(Hidden_Song_Count == 10)
+        {
+            source.clip = hidden;
+            source.Play();
+        }
+        else
+        {
+            Hidden_Song_Count += 1;
+        }
+    }
+
     public void Background_Change()
     {
-        int a = Random.Range(0, 2);
+        int a = Random.Range(0, 3);
         switch (a)
         {
             case 0:
@@ -239,6 +260,9 @@ public class SelectManager : MonoBehaviour
                 break;
             case 1:
                 Main_Background.spriteName = "Night";
+                break;
+            case 2:
+                Main_Background.spriteName = "Green";
                 break;
         }
     }
@@ -347,7 +371,9 @@ public class SelectManager : MonoBehaviour
         BD_Coin = PlayerPrefs.GetInt("BD_Coin", 0);
         BD_Diamond = PlayerPrefs.GetInt("BD_Diamond", 0);
         BD_Feather = PlayerPrefs.GetInt("BD_Dora_Feather", 0);
-        if(BD_Coin > 9999999)
+        BD_Hard_Ticket = PlayerPrefs.GetInt("BD_Hard_Ticket");
+
+        if (BD_Coin > 9999999)
         {
             BD_Coin = 9999999;
             PlayerPrefs.SetInt("BD_Coin", BD_Coin);
@@ -364,11 +390,16 @@ public class SelectManager : MonoBehaviour
             BD_Feather = 999;
             PlayerPrefs.SetInt("BD_Dora_Feather", BD_Feather);
         }
+
+        if (BD_Hard_Ticket > 99)
+        {
+            BD_Hard_Ticket = 99;
+            PlayerPrefs.SetInt("BD_Hard_Ticket", BD_Hard_Ticket);
+        }
+
         BD_Coin_txt.text = BD_Coin.ToString();
         BD_Dia_txt.text = BD_Diamond.ToString();
         BD_Feather_txt.text = BD_Feather.ToString();
-        BD_Hard_Ticket = PlayerPrefs.GetInt("BD_Hard_Ticket");
-
         Hard_txt.text = "X " + BD_Hard_Ticket.ToString();
 
         Nickname = PlayerPrefs.GetString("Nickname");
@@ -377,6 +408,10 @@ public class SelectManager : MonoBehaviour
         HighScore = PlayerPrefs.GetInt("HighScore");
         HighScore_txt.text = HighScore.ToString();
         Detail_HighScore_txt.text = HighScore.ToString();
+
+        int a = PlayerPrefs.GetInt("AllScore");
+
+        Detail_AllScore_txt.text = a.ToString();
 
         Rank = PlayerPrefs.GetInt("Rank");
         Rank_txt.text = Rank_Number[Rank];
@@ -684,7 +719,8 @@ public class SelectManager : MonoBehaviour
 
     public void Blog_URL()
     {
-        Application.OpenURL("http://m.blog.naver.com/burningdiamond");
+        //Application.OpenURL("http://m.blog.naver.com/burningdiamond");
+        Application.OpenURL("http://parksh3641.cafe24.com/");
     }
 
     public void Google_URL()
@@ -787,6 +823,7 @@ public class SelectManager : MonoBehaviour
             Music_sprite.color = new Color(0f, 1f, 0f, 1f);
             Music_txt.text = LanguageManager.instance.On;
             source.enabled = true;
+            Hidden_Song();
         }
         else
         {

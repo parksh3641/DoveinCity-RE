@@ -59,14 +59,14 @@ public class ShopManager : MonoBehaviour
 
 
     //마일리지
+    private int Mileage;
+    private int mileage; // 마일리지를 10으로 나눈 수
+
     public GameObject Mileage_Notion;
 
     public UILabel Mileage_Main_txt; // 알 마일리지
     public UILabel Mileage_Hold_txt; // X99
     public UISprite Mileage_Fillter;
-
-    private int mileage; // 마일리지를 10으로 나눈 수
-
 
     private List<string> Incubator_Egg = new List<string>();
     private List<string> Incubator_Rare = new List<string>();
@@ -76,7 +76,6 @@ public class ShopManager : MonoBehaviour
     private int BD_Coin;
     private int BD_Diamond;
     private int BD_Dora_Feather;
-    private int Mileage;
 
     private int BD_Dove_Egg;
     private int BD_Owl_Egg;
@@ -127,6 +126,7 @@ public class ShopManager : MonoBehaviour
             EasterEgg_GoldEgg.SetActive(false);
             EasterEgg_GoldEgg_Incubator.SetActive(false);
         }
+
     }
 
     public void Language_Setting()
@@ -199,6 +199,11 @@ public class ShopManager : MonoBehaviour
         {
             int a = PlayerPrefs.GetInt("2016041820161103");
             if (a == 1)
+            {
+                EasterEgg_GoldEgg.SetActive(true);
+                EasterEgg_GoldEgg_Incubator.SetActive(true);
+            }
+            else
             {
                 EasterEgg_GoldEgg.SetActive(true);
                 EasterEgg_GoldEgg_Incubator.SetActive(true);
@@ -893,7 +898,7 @@ public class ShopManager : MonoBehaviour
             EffectManager.instance.Box_Open_2();
 
         }
-        else if (a >= 4)
+        else if (a >= 5)
         {
             //Debug.Log("도라의 깃털");
             Egg_Mileage_Notion(3);
@@ -1119,6 +1124,7 @@ public class ShopManager : MonoBehaviour
 
     void Egg_Mileage_Notion(int number)
     {
+        
         Mileage_Notion.SetActive(false);
         Mileage_Notion.SetActive(true);
         Mileage_Notion.GetComponent<UILabel>().text = "+" + number.ToString();
@@ -1128,10 +1134,18 @@ public class ShopManager : MonoBehaviour
 
         if(mileage >= 10)
         {
-            mileage -= 10;
             Mileage += 1;
+            mileage -= 10;     
             PlayerPrefs.SetInt("mileage", mileage);
             PlayerPrefs.SetInt("Mileage", Mileage);
+        }
+
+        if(Mileage >= 999)
+        {
+            Mileage = 999;
+            mileage = 0;
+            PlayerPrefs.SetInt("Mileage", Mileage);
+            PlayerPrefs.SetInt("mileage", mileage);
         }
     }
 

@@ -107,7 +107,7 @@ public class CarCtrl : MonoBehaviour
         Car_Damage = SystemManager.instance.Car_Damage;
         if(Value != 1)
         {
-            speed = UnityEngine.Random.Range(SystemManager.instance.Dove_Speed * 1.25f, SystemManager.instance.Dove_Speed * 1.5f);
+            speed = UnityEngine.Random.Range(SystemManager.instance.Dove_Speed * 1.0f, SystemManager.instance.Dove_Speed * 1.25f);
         }
         else
         {

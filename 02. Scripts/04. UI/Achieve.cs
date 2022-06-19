@@ -271,22 +271,22 @@ public class Achieve : MonoBehaviour
 
         switch (Language)
         {
-            case 0:
+            case 1:
                 Title.text = Content_Title_Korean[Value - 1];
                 False_txt.text = Content_False_Korean[0];
                 Reward_txt.text = Content_False_Korean[1];
                 break;
-            case 1:
+            case 2:
                 Title.text = Content_Title_English[Value - 1];
                 False_txt.text = Content_False_English[0];
                 Reward_txt.text = Content_False_English[1];
                 break;
-            case 2:
+            case 3:
                 Title.text = Content_Title_Chinese[Value - 1];
                 False_txt.text = Content_False_Chinese[0];
                 Reward_txt.text = Content_False_Chinese[1];
                 break;
-            case 3:
+            case 4:
                 Title.text = Content_Title_Japanese[Value - 1];
                 False_txt.text = Content_False_Japanese[0];
                 Reward_txt.text = Content_False_Japanese[1];

@@ -215,8 +215,6 @@ public class SystemManager : MonoBehaviour
             PlayerPrefs.SetInt("SFX_Onoff",1);
             PlayerPrefs.SetInt("Vibration_Onoff",1);
 
-            PlayerPrefs.SetInt("Language", 0);
-
             PlayerPrefs.SetString("Nickname", "반갑습니다.");
 
             PlayerPrefs.SetString("Black_Skill_Point_Save","0000000000");
@@ -283,12 +281,12 @@ public class SystemManager : MonoBehaviour
         Heart_Up_Value = 2;
 
         Fly_Default_Value = 5.5f; //높이날기 지속시간
-        Fly_Up_Value = 0.5f;
+        Fly_Up_Value = 0.2f;
 
         Coin_Default_Value = 20;
         Coin_Up_Value = 2;
 
-        Item_Default_Value = 15;
+        Item_Default_Value = 20;
         Item_Up_Value = 1;
 
         Hit_Default_Value = 1.5f;
@@ -300,7 +298,7 @@ public class SystemManager : MonoBehaviour
         Fever_Default_Value = 10;
         Fever_Up_Value = 0.5f;
 
-        FlyDown_Default_Value = 30;
+        FlyDown_Default_Value = 60;
         FlyDown_Up_Value = -1;
 
         Score2_Default_Value = 0;
@@ -535,7 +533,7 @@ public class SystemManager : MonoBehaviour
         Skill_Up_Value = 500;
 
         //맵 이동속도
-        Dove_Speed = 0.5f;
+        Dove_Speed = 1.0f;
         Up_Speed = Dove_Speed * 0.1f;
 
         int a = PlayerPrefs.GetInt("Level");
@@ -547,7 +545,7 @@ public class SystemManager : MonoBehaviour
                 Dove_Speed += (Up_Speed * 2);
                 break;
             case 2:
-                Dove_Speed += (Up_Speed * 4);
+                Dove_Speed += (Up_Speed * 5);
                 break;
         }
         //Debug.Log(Dove_Speed);

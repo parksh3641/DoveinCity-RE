@@ -85,7 +85,7 @@ public class Record : MonoBehaviour
         int a = PlayerPrefs.GetInt("Language");
         switch (a)
         {
-            case 0:
+            case 1:
                 for (int i = 0; i < LanguageManager.instance.Record_Main_Korean.Length; i++)
                 {
                     string b = LanguageManager.instance.Record_Main_Korean[i];
@@ -107,7 +107,7 @@ public class Record : MonoBehaviour
                     Record_Dead.Add(b);
                 }
                 break;
-            case 1:
+            case 2:
                 for (int i = 0; i < LanguageManager.instance.Record_Main_English.Length; i++)
                 {
                     string b = LanguageManager.instance.Record_Main_English[i];
@@ -129,7 +129,7 @@ public class Record : MonoBehaviour
                     Record_Dead.Add(b);
                 }
                 break;
-            case 2:
+            case 3:
                 for (int i = 0; i < LanguageManager.instance.Record_Main_Chinese.Length; i++)
                 {
                     string b = LanguageManager.instance.Record_Main_Chinese[i];
@@ -151,7 +151,7 @@ public class Record : MonoBehaviour
                     Record_Dead.Add(b);
                 }
                 break;
-            case 3:
+            case 4:
                 for (int i = 0; i < LanguageManager.instance.Record_Main_Japanese.Length; i++)
                 {
                     string b = LanguageManager.instance.Record_Main_Japanese[i];

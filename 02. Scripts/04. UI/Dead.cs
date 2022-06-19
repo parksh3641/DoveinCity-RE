@@ -38,28 +38,28 @@ public class Dead : MonoBehaviour
         int a = PlayerPrefs.GetInt("Language");
         switch (a)
         {
-            case 0:
+            case 1:
                 for (int i = 0; i < LanguageManager.instance.Book_Dead_Korean.Length; i++)
                 {
                     string b = LanguageManager.instance.Book_Dead_Korean[i];
                     Book_Dead.Add(b);
                 }
                 break;
-            case 1:
+            case 2:
                 for (int i = 0; i < LanguageManager.instance.Book_Dead_English.Length; i++)
                 {
                     string b = LanguageManager.instance.Book_Dead_English[i];
                     Book_Dead.Add(b);
                 }
                 break;
-            case 2:
+            case 3:
                 for (int i = 0; i < LanguageManager.instance.Book_Dead_Chinese.Length; i++)
                 {
                     string b = LanguageManager.instance.Book_Dead_Chinese[i];
                     Book_Dead.Add(b);
                 }
                 break;
-            case 3:
+            case 4:
                 for (int i = 0; i < LanguageManager.instance.Book_Dead_Japanese.Length; i++)
                 {
                     string b = LanguageManager.instance.Book_Dead_Japanese[i];

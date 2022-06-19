@@ -339,16 +339,16 @@ public class TutorialManager : MonoBehaviour
 
         switch (a)
         {
-            case 0:
+            case 1:
                 Tutorial_Title = LanguageManager.instance.Tutorial_Title_Korean;
                 break;
-            case 1:
+            case 2:
                 Tutorial_Title = LanguageManager.instance.Tutorial_Title_English;
                 break;
-            case 2:
+            case 3:
                 Tutorial_Title = LanguageManager.instance.Tutorial_Title_Chinese;
                 break;
-            case 3:
+            case 4:
                 Tutorial_Title = LanguageManager.instance.Tutorial_Title_Japanese;
                 break;
         }

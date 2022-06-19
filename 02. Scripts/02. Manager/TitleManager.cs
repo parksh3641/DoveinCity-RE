@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TitleManager : MonoBehaviour
 {
@@ -35,9 +36,13 @@ public class TitleManager : MonoBehaviour
     public float ShakeAmount;
     public float ShakeTime;
 
+    public int login;
+
     void Awake()
     {
         instance = this;
+
+        login = PlayerPrefs.GetInt("Login");
 
         source = gameObject.GetComponent<AudioSource>();
         box = Background.GetComponent<BoxCollider2D>();
@@ -51,6 +56,7 @@ public class TitleManager : MonoBehaviour
         Background.SetActive(false);
         Logo_txt.SetActive(false);
         Logo_txt2.SetActive(false);
+        Version_txt.GetComponent<UILabel>().text = "v" + Application.version.ToString();
         Version_txt.SetActive(false);
         Touch.SetActive(false);
         GooglePlay_Login.SetActive(false);
@@ -59,40 +65,59 @@ public class TitleManager : MonoBehaviour
 
         Guest_Warning.SetActive(false);
 
+        if (PlayerPrefs.GetInt("Language") == 0)
+        {
+            if (Application.systemLanguage == SystemLanguage.Korean)
+            {
+                PlayerPrefs.SetInt("Language", 1);
+            }
+            else if (Application.systemLanguage == SystemLanguage.Japanese)
+            {
+                PlayerPrefs.SetInt("Language", 3);
+            }
+            else if (Application.systemLanguage == SystemLanguage.Chinese)
+            {
+                PlayerPrefs.SetInt("Language", 4);
+            }
+            else
+            {
+                PlayerPrefs.SetInt("Language", 2);
+            }
+        }
     }
     void Start()
     {
         box.enabled = false;
-        Background_Change();
+        //Background_Change();
 
         StartCoroutine(LogoStart());
     }
 
-    public void Background_Change()
-    {
-        int a = Random.Range(0, 3);
-        switch (a)
-        {
-            case 0:
-                Main_Background.spriteName = "Cloud";
-                break;
-            case 1:
-                Main_Background.spriteName = "Night";
-                break;
-            case 2:
-                Main_Background.spriteName = "Green";
-                break;
-        }
-    }
+    //public void Background_Change()
+    //{
+    //    int a = Random.Range(0, 3);
+    //    switch (a)
+    //    {
+    //        case 0:
+    //            Main_Background.spriteName = "Cloud";
+    //            break;
+    //        case 1:
+    //            Main_Background.spriteName = "Night";
+    //            break;
+    //        case 2:
+    //            Main_Background.spriteName = "Green";
+    //            break;
+    //    }
+    //}
 
     IEnumerator LogoStart()
     {
-        Logo.SetActive(true);
-        Logo_txt.SetActive(true);
-        source.PlayOneShot(Water, 1f);
-        yield return new WaitForSeconds(2.5f);
-        EffectManager.instance.SFX_On();
-        source.Stop();
+        //Logo.SetActive(true);
+        //Logo_txt.SetActive(true);
+        //source.PlayOneShot(Water, 1f);
+        //yield return new WaitForSeconds(2.5f);
+        //EffectManager.instance.SFX_On();
+        //source.Stop();
         Background.SetActive(true);
         Logo.SetActive(false);
         Logo_txt.SetActive(false);
@@ -111,21 +136,14 @@ public class TitleManager : MonoBehaviour
         source.clip = MainTheme;
         source.Play();
 
-        int a = PlayerPrefs.GetInt("Login"); //자동 로그인
-        if (a == 2)
-        {
-            Login_GooglePlay();
-        }
-
         yield return new WaitForSeconds(0.5f);
         Touch.GetComponent<UILabel>().color = new Color(0, 0, 0, 1);
         Touch.SetActive(true);
         Version_txt.SetActive(true);
-        Logo_txt2.SetActive(true);
+        //Logo_txt2.SetActive(true);
         StartCoroutine(Touch_Wait());
         yield return new WaitForSeconds(0.1f);
         box.enabled = true;
-
     }
 
     IEnumerator Touch_Wait()
@@ -160,8 +178,7 @@ public class TitleManager : MonoBehaviour
     {
         box.enabled = false;
 
-        int a = PlayerPrefs.GetInt("Login");
-        switch (a)
+        switch (login)
         {
             case 1:
                 Guset_Go();

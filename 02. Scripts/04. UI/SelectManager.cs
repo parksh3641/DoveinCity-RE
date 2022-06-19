@@ -142,7 +142,7 @@ public class SelectManager : MonoBehaviour
         source = gameObject.GetComponent<AudioSource>();
 
         DoveChoice = PlayerPrefs.GetInt("DoveChoice");
-        Background_Change();
+        //Background_Change();
 
         Level = 0;
         Hidden_Song_Count = 0;
@@ -250,22 +250,22 @@ public class SelectManager : MonoBehaviour
         }
     }
 
-    public void Background_Change()
-    {
-        int a = Random.Range(0, 3);
-        switch (a)
-        {
-            case 0:
-                Main_Background.spriteName = "Cloud";
-                break;
-            case 1:
-                Main_Background.spriteName = "Night";
-                break;
-            case 2:
-                Main_Background.spriteName = "Green";
-                break;
-        }
-    }
+    //public void Background_Change()
+    //{
+    //    int a = Random.Range(0, 3);
+    //    switch (a)
+    //    {
+    //        case 0:
+    //            Main_Background.spriteName = "Cloud";
+    //            break;
+    //        case 1:
+    //            Main_Background.spriteName = "Night";
+    //            break;
+    //        case 2:
+    //            Main_Background.spriteName = "Green";
+    //            break;
+    //    }
+    //}
 
     public void Background_Change2()
     {
@@ -536,28 +536,28 @@ public class SelectManager : MonoBehaviour
             LanguageWindow.SetActive(true);
 
             int a = PlayerPrefs.GetInt("Language");
-            if (a == 0)
+            if (a == 1)
             {
                 Check_Korean.SetActive(true);
                 Check_English.SetActive(false);
                 Check_Chinese.SetActive(false);
                 Check_Japanese.SetActive(false);
             }
-            else if (a == 1)
+            else if (a == 2)
             {
                 Check_Korean.SetActive(false);
                 Check_English.SetActive(true);
                 Check_Chinese.SetActive(false);
                 Check_Japanese.SetActive(false);
             }
-            else if (a == 2)
+            else if (a == 3)
             {
                 Check_Korean.SetActive(false);
                 Check_English.SetActive(false);
                 Check_Chinese.SetActive(true);
                 Check_Japanese.SetActive(false);
             }
-            else if (a == 3)
+            else if (a == 4)
             {
                 Check_Korean.SetActive(false);
                 Check_English.SetActive(false);

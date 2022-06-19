@@ -139,7 +139,7 @@ public class ShopManager : MonoBehaviour
         int a = PlayerPrefs.GetInt("Language");
         switch (a)
         {
-            case 0:
+            case 1:
                 for (int i = 0; i < LanguageManager.instance.Incubator_Egg_Korean.Length; i++)
                 {
                     string b = LanguageManager.instance.Incubator_Egg_Korean[i];
@@ -151,7 +151,7 @@ public class ShopManager : MonoBehaviour
                     Incubator_Rare.Add(b);
                 }
                 break;
-            case 1:
+            case 2:
                 for (int i = 0; i < LanguageManager.instance.Incubator_Egg_English.Length; i++)
                 {
                     string b = LanguageManager.instance.Incubator_Egg_English[i];
@@ -163,7 +163,7 @@ public class ShopManager : MonoBehaviour
                     Incubator_Rare.Add(b);
                 }
                 break;
-            case 2:
+            case 3:
                 for (int i = 0; i < LanguageManager.instance.Incubator_Egg_Chinese.Length; i++)
                 {
                     string b = LanguageManager.instance.Incubator_Egg_Chinese[i];
@@ -175,7 +175,7 @@ public class ShopManager : MonoBehaviour
                     Incubator_Rare.Add(b);
                 }
                 break;
-            case 3:
+            case 4:
                 for (int i = 0; i < LanguageManager.instance.Incubator_Egg_Japanese.Length; i++)
                 {
                     string b = LanguageManager.instance.Incubator_Egg_Japanese[i];
@@ -430,16 +430,16 @@ public class ShopManager : MonoBehaviour
             int a = PlayerPrefs.GetInt("Language");
             switch (a)
             {
-                case 0:
+                case 1:
                     RewardAd_txt.text = "무료";
                     break;
-                case 1:
+                case 2:
                     RewardAd_txt.text = "Free";
                     break;
-                case 2:
+                case 3:
                     RewardAd_txt.text = "免费的";
                     break;
-                case 3:
+                case 4:
                     RewardAd_txt.text = "無料";
                     break;
             }

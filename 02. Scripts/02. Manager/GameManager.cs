@@ -695,7 +695,7 @@ public class GameManager : MonoBehaviour
         int a = PlayerPrefs.GetInt("Language");
         switch (a)
         {
-            case 0:
+            case 1:
                 for (int i = 0; i < LanguageManager.instance.Book_Dead_Korean.Length; i++)
                 {
                     string b = LanguageManager.instance.Book_Dead_Korean[i];
@@ -709,7 +709,7 @@ public class GameManager : MonoBehaviour
                 InGame_Count = LanguageManager.instance.InGame_Count_Korean;
                 UFO_txt.text = LanguageManager.instance.InGame_UFO_Korean;
                 break;
-            case 1:
+            case 2:
                 for (int i = 0; i < LanguageManager.instance.Book_Dead_English.Length; i++)
                 {
                     string b = LanguageManager.instance.Book_Dead_English[i];
@@ -723,7 +723,7 @@ public class GameManager : MonoBehaviour
                 InGame_Count = LanguageManager.instance.InGame_Count_English;
                 UFO_txt.text = LanguageManager.instance.InGame_UFO_English;
                 break;
-            case 2:
+            case 3:
                 for (int i = 0; i < LanguageManager.instance.Book_Dead_Chinese.Length; i++)
                 {
                     string b = LanguageManager.instance.Book_Dead_Chinese[i];
@@ -737,7 +737,7 @@ public class GameManager : MonoBehaviour
                 InGame_Count = LanguageManager.instance.InGame_Count_Chinese;
                 UFO_txt.text = LanguageManager.instance.InGame_UFO_Chinese;
                 break;
-            case 3:
+            case 4:
                 for (int i = 0; i < LanguageManager.instance.Book_Dead_Japanese.Length; i++)
                 {
                     string b = LanguageManager.instance.Book_Dead_Japanese[i];

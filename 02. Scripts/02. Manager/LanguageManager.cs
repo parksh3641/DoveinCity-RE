@@ -369,7 +369,7 @@ public class LanguageManager : MonoBehaviour
 
     private string[] InGame_Korean = { "점수", "최고점수", "설정", "음악", "효과음", "진동", "나가기", "계속하기",
     "게임 오버","사망 원인 : ","광고 시청","이어 하기","포기하기",
-    "게임 결과","현재 점수","최고 점수","현재 단계","최고 단계","생존 시간","최대 생존 시간","획득 다이아","획득 코인","획득 깃털","광고 시청 코인 +100%","떠나기" };
+    "게임 결과","현재 점수","최고 점수","현재 단계","최고 단계","생존 시간","최대 생존 시간","획득 다이아","획득 코인","획득 깃털","광고시청 X2 코인","떠나기" };
 
     public string[] InGame_Level_Korean = { "쉬움", "보통", "어려움" };
     public string[] InGame_Korean_On = { "켜짐", "꺼짐" };
@@ -383,7 +383,7 @@ public class LanguageManager : MonoBehaviour
 
     private string[] InGame_English = { "Score", "Best", "Option", "Music", "SFX", "Vibration", "Exit", "Continue",
     "Game Over","Cause of Death : ","Watch an Ad","Continue","Leave",
-    "Game Result","Now Score","High Score","Now Stage","High Stage","Now Survival Time","High Survival Time","Get Gems","Get Coins","Get Feathers","Watch an Ad Coin +100%","Leave" };
+    "Game Result","Now Score","High Score","Now Stage","High Stage","Now Survival Time","High Survival Time","Get Gems","Get Coins","Get Feathers","Watch Ad X2 Coin","Leave" };
 
     public string[] InGame_Level_English = { "Easy", "Normal", "Hard" };
     public string[] InGame_English_On = { "ON", "OFF" };
@@ -397,7 +397,7 @@ public class LanguageManager : MonoBehaviour
 
     private string[] InGame_Chinese = { "分数","最高分","设定","音乐","效果音","振动","出口","继续",
     "游戏结束","死亡原因 : ","观看广告","接续","放弃",
-    "游戏结束","现分","最高分","现在阶段","最高阶段","生存时间","高生存时间","获得宝石","获得硬币","获得羽毛","观看广告 硬币 +100%","离开"};
+    "游戏结束","现分","最高分","现在阶段","最高阶段","生存时间","高生存时间","获得宝石","获得硬币","获得羽毛","观看广告 X2 硬币","离开"};
 
     public string[] InGame_Level_Chinese = { "下", "中", "上" };
     public string[] InGame_Chinese_On = { "打开", "熄灭" };
@@ -411,7 +411,7 @@ public class LanguageManager : MonoBehaviour
 
     private string[] InGame_Japanese = { "スコア","ベスト","オプション","音楽","効果音","振動","出口","継続",
     "ゲームオーバー","死亡原因 : ","広告視聴","継続","放棄",
-    "ゲームの結果","現在のスコア","最高スコア","現在の段階","最高の段階","生存時間","大生存時間","獲得宝石","獲得コイン","獲得羽","広告視聴 コイン +100%","発つ"};
+    "ゲームの結果","現在のスコア","最高スコア","現在の段階","最高の段階","生存時間","大生存時間","獲得宝石","獲得コイン","獲得羽","広告視聴 X2 コイン","発つ"};
 
     public string[] InGame_Level_Japanese = { "下", "中", "上" };
     public string[] InGame_Japanese_On = { "オン", "オフ" };
@@ -671,7 +671,7 @@ public class LanguageManager : MonoBehaviour
     //언어 설정
     public void Korean()
     {
-        Language = 0;
+        Language = 1;
         PlayerPrefs.SetInt("Language", Language);
         Change_Language(Language);
         SelectManager.instance.Exit();
@@ -679,7 +679,7 @@ public class LanguageManager : MonoBehaviour
     }
     public void English()
     {
-        Language = 1;
+        Language = 2;
         PlayerPrefs.SetInt("Language", Language);
         Change_Language(Language);
         SelectManager.instance.Exit();
@@ -687,7 +687,7 @@ public class LanguageManager : MonoBehaviour
     }
     public void Chinese()
     {
-        Language = 2;
+        Language = 3;
         PlayerPrefs.SetInt("Language", Language);
         Change_Language(Language);
         SelectManager.instance.Exit();
@@ -695,7 +695,7 @@ public class LanguageManager : MonoBehaviour
     }
     public void Japanese()
     {
-        Language = 3;
+        Language = 4;
         PlayerPrefs.SetInt("Language", Language);
         Change_Language(Language);
         SelectManager.instance.Exit();
@@ -703,7 +703,7 @@ public class LanguageManager : MonoBehaviour
     }
     public void Change_Language(int number)
     {
-        if(number == 0)
+        if(number == 1)
         {
             if(Value == 0)
             {
@@ -768,7 +768,7 @@ public class LanguageManager : MonoBehaviour
             }
 
         }
-        else if(number == 1)
+        else if(number == 2)
         {
             if (Value == 0)
             {
@@ -832,7 +832,7 @@ public class LanguageManager : MonoBehaviour
                 }
             }
         }
-        else if (number == 2)
+        else if (number == 3)
         {
             if (Value == 0)
             {
@@ -896,7 +896,7 @@ public class LanguageManager : MonoBehaviour
                 }
             }
         }
-        else if (number == 3)
+        else if (number == 4)
         {
             if (Value == 0)
             {

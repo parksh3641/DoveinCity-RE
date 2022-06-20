@@ -1037,16 +1037,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch(Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("현재 잠겨있습니다.", 3, 0);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("It is currently locked.", 3, 0);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("现在被锁着。", 3, 0);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("現在ロックされています。", 3, 0);
                 break;
         }
@@ -1057,16 +1057,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch (Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("쿠폰 입력 성공!", 2, 0);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("Coupon enter successful!", 2, 0);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("优惠券输入成功!", 2, 0);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("クーポン入力成功!", 2, 0);
                 break;
         }
@@ -1077,16 +1077,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch (Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("보상 획득!", 2, 0);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("Rewarded!", 2, 0);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("获得补偿!", 2, 0);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("報償獲得!", 2, 0);
                 break;
         }
@@ -1097,16 +1097,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch (Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("레벨 업!", 2, 0);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("Level up!", 2, 0);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("等级!", 2, 0);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("レベルアップ!", 2, 0);
                 break;
         }
@@ -1116,16 +1116,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch (Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("비둘기를 구매했습니다!", 2, 0);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("Purchased a pigeon!", 2, 0);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("买了鸽子!", 2, 0);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("鳩を買入しました!", 2, 0);
                 break;
         }
@@ -1136,16 +1136,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch (Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("구입 완료!", 2, 0);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("Purchase completed!", 2, 0);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("购买完毕!", 2, 0);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("買入完了!", 2, 0);
                 break;
         }
@@ -1156,16 +1156,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch (Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("초기화 완료!", 2, 0);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("Initialization complete!", 2, 0);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("初始化完成!", 2, 0);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("初期化完了!", 2, 0);
                 break;
         }
@@ -1176,16 +1176,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch (Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("이름 변경 완료!", 2, 0);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("Rename complete!", 2, 0);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("姓名变更完成!", 2, 0);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("名前の変更完了!", 2, 0);
                 break;
         }
@@ -1198,16 +1198,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch (Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("이미 사용한 번호입니다.", 3, 0);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("This number has already been used.", 3, 0);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("已用号码。", 3, 0);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("すでに使用した番号です。", 3, 0);
                 break;
         }
@@ -1217,16 +1217,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch (Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("최고 레벨 입니다.", 3, 0);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("It's the highest level.", 3, 0);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("是最高的水平。", 3, 0);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("最高レベルです。", 3, 0);
                 break;
         }
@@ -1237,16 +1237,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch (Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("이미 보유중입니다.", 3, 0);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("You already have.", 3, 0);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("已持有。", 3, 0);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("すでに保有しています。", 3, 0);
                 break;
         }
@@ -1256,16 +1256,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch (Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("오늘은 이미 받으셨습니다.", 3, 0);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("You've already received it today.", 3, 0);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("今天已经收到。", 3, 0);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("今日はすでに受けました。", 3, 0);
                 break;
         }
@@ -1275,16 +1275,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch (Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("착용 완료!", 2, 0);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("Wear finished!", 2, 0);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("穿戴完毕!", 2, 0);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("着用完了!", 2, 0);
                 break;
         }
@@ -1295,16 +1295,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch (Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("착용 해제!", 3, 0);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("Wear off!", 3, 0);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("解除穿戴!", 3, 0);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("着用解除!", 3, 0);
                 break;
         }
@@ -1316,16 +1316,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch (Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("포인트가 부족합니다.", 0, 0);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("Not enough points.", 0, 0);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("亮点不足。", 0, 0);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("ポイントが不足します。", 0, 0);
                 break;
         }
@@ -1335,16 +1335,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch (Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("코인이 부족합니다.", 0, 0);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("Not enough coins.", 0, 0);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("硬币不够。", 0, 0);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("コインが不足します。", 0, 0);
                 break;
         }
@@ -1354,16 +1354,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch (Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("다이아가 부족합니다.", 0, 0);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("Not enough gems.", 0, 0);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("宝石不够。", 0, 0);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("宝石が不足します。", 0, 0);
                 break;
         }
@@ -1373,16 +1373,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch (Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("깃털이 부족합니다.", 0, 0);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("Not enough feathers.", 0, 0);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("羽毛不足。", 0, 0);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("羽が不足します。", 0, 0);
                 break;
         }
@@ -1392,16 +1392,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch (Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("생존시간이 부족합니다.", 0, 0);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("Not enough survival time.", 0, 0);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("生存时间不够。", 0, 0);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("生存時間が不足します。", 0, 0);
                 break;
         }
@@ -1412,16 +1412,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch (Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("글자수가 모자랍니다.", 0, 0);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("Not enough letters.", 0, 0);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("字数不够。", 0, 0);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("文字数が足りません。", 0, 0);
                 break;
         }
@@ -1432,16 +1432,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch (Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("입장권이 부족합니다.", 0, 0);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("Not enough tickets.", 0, 0);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("门票不够。", 0, 0);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("入場券が不足します。", 0, 0);
                 break;
         }
@@ -1452,16 +1452,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch (Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("쿠폰 번호가 틀립니다.", 0, 0);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("The coupon number is incorrect.", 0, 0);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("优惠券编号错误。", 0, 0);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("クーポン番号が違います。", 0, 0);
                 break;
         }
@@ -1471,16 +1471,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch (Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("이전과 같은 닉네임을 사용할 수 없습니다.", 0, 0);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("You cannot use the same nickname as before.", 0, 0);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("不能使用和以前一样的昵称。", 0, 0);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("以前のようなニックネームを使用することができません。", 0, 0);
                 break;
         }
@@ -1490,16 +1490,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch (Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("특수문자는 사용할 수 없습니다.", 0, 0);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("Special characters are not allowed.", 0, 0);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("特殊文字不能使用。", 0, 0);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("特殊文字は使用できません。", 0, 0);
                 break;
         }
@@ -1510,16 +1510,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch (Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("착용할 수 없습니다.", 0, 0);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("You can't wear it.", 0, 0);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("不能穿着。", 0, 0);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("着用することができません。", 0, 0);
                 break;
         }
@@ -1529,16 +1529,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch (Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("더 이상 구매하실 수 없습니다.", 0, 0);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("No more purchases available.", 0, 0);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("不能再购买。", 0, 0);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("これ以上買入することができません。", 0, 0);
                 break;
         }
@@ -1549,16 +1549,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch (Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("보유한 알이 없습니다.", 0, 0);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("You don't have any eggs.", 0, 0);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("保有的卵不存在。", 0, 0);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("保有している卵がありません。", 0, 0);
                 break;
         }
@@ -1568,16 +1568,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch (Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("초기화 시킬 수 없습니다.", 0, 0);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("Unable to initialize.", 0, 0);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("不能初始化。", 0, 0);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("初期化させることができません。", 0, 0);
                 break;
         }
@@ -1588,16 +1588,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch (Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("잠시 후 다시 시청할 수 있습니다.", 3, 0);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("You can watch it again in a few minutes.", 3, 0);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("一会儿可以再收看。", 3, 0);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("しばらくして視聴することができます。", 3, 0);
                 break;
         }
@@ -1607,16 +1607,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch (Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("더 이상 획득할 수 없습니다.", 0, 0);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("Cannot acquire any more.", 0, 0);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("不能再获得。", 0, 0);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("これ以上獲得できません。", 0, 0);
                 break;
         }
@@ -1629,16 +1629,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch (Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("스킬의 재사용 대기시간이 끝났습니다.", 4, 1);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("Skills wait time is over.", 4, 1);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("斯基的重新使用等待时间已经结束。", 4, 1);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("スキルの再使用待機時間が終わりました。", 4, 1);
                 break;
         }
@@ -1647,16 +1647,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch (Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("두더지를 피해 살아남으세요!", 3, 0);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("Survive the mole!", 3, 0);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("请避开鼹鼠生存!", 3, 0);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("モグラを避けて生き残ってください!", 3, 0);
                 break;
         }
@@ -1665,16 +1665,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch (Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("모든 코인을 획득하세요!", 3, 0);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("Earn all coins!", 3, 0);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("请获得所有的硬币!", 3, 0);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("すべてのコインを獲得してください!", 3, 0);
                 break;
         }
@@ -1684,16 +1684,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch (Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("피버모드 발동!", 0, 0);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("Fever Mode!", 0, 0);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("最大模式发动!", 0, 0);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("最大モード発動!", 0, 0);
                 break;
         }
@@ -1703,16 +1703,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch (Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("단계 상승!", 3, 0);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("Stage up!", 3, 0);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("阶段上升!", 3, 0);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("段階上昇!", 3, 0);
                 break;
         }
@@ -1721,16 +1721,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch (Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("사망하였습니다.", 0, 0);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("You Died.", 0, 0);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("已过世。", 0, 0);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("死亡しました。", 0, 0);
                 break;
         }
@@ -1739,16 +1739,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch (Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("UFO에게 납치당했습니다.", 0, 0);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("Kidnapped by UFO.", 0, 0);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("我被UFO绑架了。", 0, 0);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("UFOに拉致されました。", 0, 0);
                 break;
         }
@@ -1758,16 +1758,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch (Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("아이템 획득!", 2, 0);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("Get Item!", 2, 0);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("获得项目!", 2, 0);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("アイテム獲得!", 2, 0);
                 break;
         }
@@ -1780,16 +1780,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch (Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("두더지가 잠에서 깨어났습니다!", 3, 0);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("The mole woke up!", 3, 0);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("鼹鼠从睡梦中醒来!", 3, 0);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("モグラが眠りから目が覚めました!", 3, 0);
                 break;
         }
@@ -1798,16 +1798,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch (Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("산신령을 무심코 자극했습니다!", 3, 0);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("The mountain spirit woke up!", 3, 0);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("无意中刺激了山神灵!", 3, 0);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("山神霊をうかうかと刺激しました!", 3, 0);
                 break;
         }
@@ -1819,16 +1819,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch (Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("횟수가 부족합니다.", 3, 0);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("Not enough times.", 3, 0);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("次数不足。", 3, 0);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("回数が不足します。", 3, 0);
                 break;
         }
@@ -1838,16 +1838,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch (Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("아직 스킬을 사용할 수 없습니다.", 3, 1);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("Skills are not yet available", 3, 1);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("现在还不能使用技能。", 3, 1);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("まだスキルを使用することができません。", 3, 1);
                 break;
         }
@@ -1858,16 +1858,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch (Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("스킬을 사용할 수 없습니다.", 0, 1);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("Skill not available.", 0, 1);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("不能使用技能。", 0, 1);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("スキルを使用することができません。", 0, 1);
                 break;
         }
@@ -1878,16 +1878,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch (Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("아이템을 2개 이상 사용할 수 없습니다.", 3, 0);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("You cannot use more than one item.", 3, 0);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("不能使用2个以上单品。", 3, 0);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("アイテムを2つ以上使用することができません。", 3, 0);
                 break;
         }
@@ -1899,16 +1899,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch (Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("낮이 되었습니다.", 3, 0);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("The day has come.", 3, 0);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("天黑了。", 3, 0);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("昼になりました。", 3, 0);
                 break;
         }
@@ -1917,16 +1917,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch (Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("밤이 되었습니다.", 4, 0);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("Night has come.", 4, 0);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("到了晚上。", 4, 0);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("夜になりました。", 4, 0);
                 break;
         }
@@ -1936,16 +1936,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch (Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("비가 오기 시작합니다.", 1, 0);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("It's starting to rain.", 1, 0);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("开始下雨了。", 1, 0);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("雨が降り始めていしました。", 1, 0);
                 break;
         }
@@ -1955,16 +1955,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch (Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("사람들이 활짝 웃기 시작합니다.", 2, 0);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("People start to smile big.", 2, 0);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("人们开始绽放笑容。", 2, 0);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("人々が大きく笑い始めます。", 2, 0);
                 break;
         }
@@ -1974,16 +1974,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch (Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("힘이 강해집니다.", 2, 0);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("Strength becomes stronger.", 2, 0);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("力量变强了。", 2, 0);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("力が強くなります。", 2, 0);
                 break;
         }
@@ -1992,16 +1992,16 @@ public class LanguageManager : MonoBehaviour
     {
         switch (Language)
         {
-            case 0:
+            case 1:
                 Default_Notion_Open("힘이 약해집니다.", 0, 0);
                 break;
-            case 1:
+            case 2:
                 Default_Notion_Open("Strength weakens.", 0, 0);
                 break;
-            case 2:
+            case 3:
                 Default_Notion_Open("力量变弱了。", 0, 0);
                 break;
-            case 3:
+            case 4:
                 Default_Notion_Open("力が弱くなります。", 0, 0);
                 break;
         }

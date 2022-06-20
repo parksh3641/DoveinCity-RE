@@ -319,10 +319,10 @@ public class TalkManager : MonoBehaviour
         {
             switch(Language)
             {
-                case 0:
+                case 1:
                     Main_txt.text += Replace_Text[i];
                     break;
-                case 1:
+                case 2:
                     if (i < 38)
                     {
                         Main_txt.text += Replace_Text[i];
@@ -332,10 +332,10 @@ public class TalkManager : MonoBehaviour
                         Main2_txt.text += Replace_Text[i];
                     }
                     break;
-                case 2:
+                case 3:
                     Main_txt.text += Replace_Text[i];
                     break;
-                case 3:
+                case 4:
                     if (i < 22)
                     {
                         Main_txt.text += Replace_Text[i];

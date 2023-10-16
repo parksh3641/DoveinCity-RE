@@ -8,7 +8,9 @@
 
 * **[애플 앱스토어 다운](https://apps.apple.com/kr/app/dove-in-city-re/id1637182464)**
 
+
 -------------
+
 
 # 비둘기의 모험 PC
 ### 개발 기간 : 2023/05 ~ 2023/8
@@ -16,4 +18,4 @@
 ### 작성된 언어 : C#
 ### 출시된 기기 : 스토브 인디
 -------------
-* **[스토브 인디 다운](https://indie.onstove.com/ko/games/2031))**
+* **[스토브 인디 다운](https://indie.onstove.com/ko/games/2031)**
